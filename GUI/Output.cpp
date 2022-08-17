@@ -1,5 +1,5 @@
 #include "Output.h"
-
+#include <cmath>
 
 Output::Output()
 {
@@ -162,6 +162,30 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 	
+}
+
+void Output::DrawCirc(Point center, Point edge, GfxInfo CircGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = CircGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, CircGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (CircGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(CircGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	double radius = pow(pow(edge.x - center.x, 2) + pow(edge.y - center.y, 2), 0.5);
+
+	pWind->DrawCircle(center.x, center.y, radius, style);
 }
 
 
