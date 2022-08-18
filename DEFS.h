@@ -8,7 +8,7 @@ enum ActionType //The actions supported (you can add more if needed)
 {
 	DRAW_LINE,		//Draw Line
 	DRAW_RECT,		//Draw Rectangle
-	DRAW_TRI,		//Draw Triangle
+	DRAW_TRIA,		//Draw Triangle
 	DRAW_CIRC,		//Draw Circle
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color

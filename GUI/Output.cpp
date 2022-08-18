@@ -82,6 +82,7 @@ void Output::CreateDrawToolBar() const
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
 	MenuItemImages[ITM_CIRC] = "images\\MenuItems\\Menu_Circ.jpg";
+	MenuItemImages[ITM_TRIA] = "images\\MenuItems\\Menu_Tria.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -186,6 +187,29 @@ void Output::DrawCirc(Point center, Point edge, GfxInfo CircGfxInfo, bool select
 	double radius = pow(pow(edge.x - center.x, 2) + pow(edge.y - center.y, 2), 0.5);
 
 	pWind->DrawCircle(center.x, center.y, radius, style);
+}
+void Output::DrawTria(Point P1, Point P2, GfxInfo TriaGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = TriaGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, TriaGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (TriaGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TriaGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	//double radius = pow(pow(edge.x - center.x, 2) + pow(edge.y - center.y, 2), 0.5);
+
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 }
 
 

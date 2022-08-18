@@ -39,9 +39,6 @@
     <ClCompile Include="CMUgraphicsLib\mousequeue.cpp">
       <Filter>CMUgraphicsLib</Filter>
     </ClCompile>
-    <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
-      <Filter>CMUgraphicsLib</Filter>
-    </ClCompile>
     <ClCompile Include="CMUgraphicsLib\jpeg\jcomapi.c">
       <Filter>CMUgraphicsLib\JPEG</Filter>
     </ClCompile>
@@ -151,6 +148,15 @@
     <ClCompile Include="Figures\CCircle.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
+    <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\AddTriaAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Figures\CTriangle.cpp">
+      <Filter>Figures Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -216,9 +222,6 @@
     <ClInclude Include="Figures\CFigure.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\CRectangle.h">
-      <Filter>Figures Classes</Filter>
-    </ClInclude>
     <ClInclude Include="Actions\Action.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
@@ -242,6 +245,15 @@
       <Filter>Action Classes</Filter>
     </ClInclude>
     <ClInclude Include="Figures\CCircle.h">
+      <Filter>Figures Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\CRectangle.h">
+      <Filter>CMUgraphicsLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\AddTriaAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\CTriangle.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
   </ItemGroup>
