@@ -51,9 +51,6 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddLineAction(this);
 			break;
 
-        case Change_FClr:
-
-            break;
 
 		case EXIT:
 			///create ExitAction here
