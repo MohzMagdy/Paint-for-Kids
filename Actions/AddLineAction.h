@@ -6,7 +6,7 @@
 class AddLineAction : public Action
 {
 private:
-	Point P1, P2; //Line endpoints
+	Point P1, P2;  //Line endpoints
 	GfxInfo LineGfxInfo;
 public:
 	AddLineAction(ApplicationManager* pApp);
