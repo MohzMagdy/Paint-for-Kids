@@ -53,7 +53,7 @@ ActionType Input::GetUserAction() const
 			case ITM_RECT: return DRAW_RECT;
 			case ITM_CIRC: return DRAW_CIRC;
 			case ITM_TRIA: return DRAW_TRIA;
-			case ITM_Line: return DRAW_Line;
+			case ITM_LINE: return DRAW_Line;
 			case ITM_Change_FClr return Change_FClr;
 			case ITM_EXIT: return EXIT;
 

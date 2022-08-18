@@ -19,8 +19,9 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	//If you want to change the menu items order, change the order here
 	ITM_RECT,		//Recangle item in menu
 	ITM_CIRC,		//Circle item in menu
-	ITM_TRIA,		//Triangle item in menu
-
+	ITM_TRIA,      //Triangle item in menu
+	ITM_LINE,
+	ITM_Change_FClr,
 	//TODO: Add more items names here
 
 	ITM_EXIT,		//Exit item

@@ -2,6 +2,7 @@
 #include "Actions\AddRectAction.h"
 #include "Actions\AddCircAction.h"
 #include "Actions\AddTriaAction.h"
+#include "Actions\AddLineAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -51,7 +52,6 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 
         case Change_FClr:
-            pAct = new ChangeFClrAction(this);
 
             break;
 
