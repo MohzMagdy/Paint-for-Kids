@@ -160,13 +160,13 @@
     <ClCompile Include="Actions\AddLineAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Actions\ChangeFClrAction.cpp">
-      <Filter>Action Classes</Filter>
-    </ClCompile>
     <ClCompile Include="Figures\CLine.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
     <ClCompile Include="Actions\ChangeColorAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -271,13 +271,13 @@
     <ClInclude Include="Actions\AddLineAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Actions\ChangeFClrAction.h">
-      <Filter>Action Classes</Filter>
-    </ClInclude>
     <ClInclude Include="Figures\CLine.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
     <ClInclude Include="Actions\ChangeColorAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
   </ItemGroup>
