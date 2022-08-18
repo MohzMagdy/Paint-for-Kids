@@ -31,6 +31,23 @@ Output::Output()
 	pWind->ChangeTitle("Paint for Kids - Programming Techniques Project");
 
 	CreateDrawToolBar();
+	
+	switch (UI.InterfaceMode)
+	{
+	case MODE_DRAW:
+		CreateDrawToolBar();
+		break;
+	case MODE_CLR:
+		CreateColorToolBar();
+		break;
+	case MODE_PLAY:
+		CreatePlayToolBar();
+		break;
+	default:
+		CreateDrawToolBar();
+		break;
+	}
+
 	CreateStatusBar();
 }
 
@@ -72,6 +89,7 @@ void Output::ClearStatusBar() const
 void Output::CreateDrawToolBar() const
 {
 	UI.InterfaceMode = MODE_DRAW;
+	ClearToolBar();
 
 	//You can draw the tool bar icons in any way you want.
 	//Below is one possible way
@@ -85,6 +103,7 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_TRIA] = "images\\MenuItems\\Menu_Tria.jpg";
 	MenuItemImages[ITM_Line] = "images\\MenuItems\\Menu_line.png";
 	MenuItemImages[ITM_Change_FClr] = "images\\MenuItems\\Change_Clr.jpg";
+	MenuItemImages[ITM_CLR] = "images\\MenuItems\\Menu_Color.png";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -100,6 +119,33 @@ void Output::CreateDrawToolBar() const
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
+//////////////////////////////////////////////////////////////////////////////////////////
+
+void Output::ClearToolBar() const
+{
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+}
+
+void Output::CreateColorToolBar() const
+{
+	UI.PrevInterfaceMode = UI.InterfaceMode;
+	UI.InterfaceMode = MODE_CLR;
+	ClearToolBar();
+
+	string MenuItemImages[DRAW_CLR_COUNT];
+	MenuItemImages[CLR_RED] = "images\\ColorItems\\Color_Red.jpg";
+	MenuItemImages[CLR_GREEN] = "images\\ColorItems\\Color_Green.jpg";
+	MenuItemImages[CLR_BLUE] = "images\\ColorItems\\Color_Blue.jpg";
+
+	for (int i = 0; i < DRAW_CLR_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void Output::CreatePlayToolBar() const
@@ -130,6 +176,10 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 
 color Output::getCrntDrawColor() const	//get current drwawing color
 {	return UI.DrawColor;	}
+
+void Output::setCrntDrawColor(color DrawColor) //set current drawing color
+{	UI.DrawColor = DrawColor;	}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 color Output::getCrntFillColor() const	//get current filling color

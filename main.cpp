@@ -8,6 +8,8 @@ int main()
 	//Create an object of ApplicationManager
 	ApplicationManager AppManager;
 
+	UI.InterfaceMode = MODE_DRAW;
+
 	do
 	{		
 		//Read user action

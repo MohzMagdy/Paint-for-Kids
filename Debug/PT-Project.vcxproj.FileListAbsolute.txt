@@ -1,2 +1,1 @@
-F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Debug\PT Project.exe
 C:\Users\kiroa\Desktop\c++ projec\Paint-for-Kids-main\Debug\PT Project.exe

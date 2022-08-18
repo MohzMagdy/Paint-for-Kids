@@ -10,7 +10,9 @@ public:
 	Output();
 
 	window* CreateWind(int, int, int , int) const; //creates the application window
+	void ClearToolBar() const;
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
+	void CreateColorToolBar() const; //creates Color selection toolbar & menu
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
 
@@ -30,6 +32,7 @@ public:
 	void PrintMessage(string msg) const;	//Print a message on Status bar
 
 	color getCrntDrawColor() const;	//get current drwawing color
+	void setCrntDrawColor(color); //set current drawing color
 	color getCrntFillColor() const;	//get current filling color
 	int getCrntPenWidth() const;		//get current pen width
 

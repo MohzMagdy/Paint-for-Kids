@@ -1,1 +1,28 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets(67,5): error MSB8020: The build tools for v143 (Platform Toolset = 'v143') cannot be found. To build using the v143 build tools, please install v143 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Output.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(7,1): error C2059: syntax error: '<<'
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(10,1): error C2059: syntax error: '=='
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(36,1): error C2059: syntax error: '<<'
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(39,1): error C2059: syntax error: '=='
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(42,2): error C2143: syntax error: missing ';' before '{'
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(43,2): error C2046: illegal case
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(46,2): error C2046: illegal case
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(49,2): error C2046: illegal case
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(52,2): error C2047: illegal default
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(57,1): error C2059: syntax error: '>>'
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(45,3): error C2043: illegal break
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(48,3): error C2043: illegal break
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(51,3): error C2043: illegal break
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(54,3): error C2043: illegal break
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(111,1): error C2059: syntax error: '<<'
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(114,1): error C2059: syntax error: '=='
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(116,1): error C2059: syntax error: '>>'
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(251,40): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  Input.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Input.cpp(58,33): error C2065: 'Change_FClr': undeclared identifier
+  ApplicationManager.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\ApplicationManager.cpp(5,10): error C2001: newline in constant
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\ApplicationManager.cpp(6,10): error C2001: newline in constant
+  ChangeFClrAction.cpp
+c1xx : fatal  error C1083: Cannot open source file: 'Actions\ChangeFClrAction.cpp': No such file or directory
+  Generating Code...
