@@ -188,7 +188,7 @@ void Output::DrawCirc(Point center, Point edge, GfxInfo CircGfxInfo, bool select
 
 	pWind->DrawCircle(center.x, center.y, radius, style);
 }
-void Output::DrawTria(Point P1, Point P2, GfxInfo TriaGfxInfo, bool selected) const
+void Output::DrawTria(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo, bool selected) const
 {
 	color DrawingClr;
 	if (selected)
@@ -209,7 +209,7 @@ void Output::DrawTria(Point P1, Point P2, GfxInfo TriaGfxInfo, bool selected) co
 
 	//double radius = pow(pow(edge.x - center.x, 2) + pow(edge.y - center.y, 2), 0.5);
 
-	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
 }
 
 

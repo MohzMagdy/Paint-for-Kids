@@ -136,7 +136,6 @@
     <ClCompile Include="CMUgraphicsLib\jpegload.c" />
     <ClCompile Include="CMUgraphicsLib\keyqueue.cpp" />
     <ClCompile Include="CMUgraphicsLib\mousequeue.cpp" />
-    <ClCompile Include="CMUgraphicsLib\windowinput.cpp" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jcomapi.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jcparam.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jdapimin.c" />
@@ -165,6 +164,7 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant1.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant2.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
+    <ClCompile Include="CMUgraphicsLib\windowinput.cpp" />
     <ClCompile Include="Figures\CCircle.cpp" />
     <ClCompile Include="Figures\CFigure.cpp" />
     <ClCompile Include="Figures\CRectangle.cpp" />

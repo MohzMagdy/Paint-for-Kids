@@ -148,14 +148,14 @@
     <ClCompile Include="Figures\CCircle.cpp">
       <Filter>Figures Classes</Filter>
     </ClCompile>
-    <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
-      <Filter>Action Classes</Filter>
-    </ClCompile>
     <ClCompile Include="Actions\AddTriaAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
     <ClCompile Include="Figures\CTriangle.cpp">
       <Filter>Figures Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
+      <Filter>CMUgraphicsLib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -247,13 +247,13 @@
     <ClInclude Include="Figures\CCircle.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\CRectangle.h">
-      <Filter>CMUgraphicsLib</Filter>
-    </ClInclude>
     <ClInclude Include="Actions\AddTriaAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
     <ClInclude Include="Figures\CTriangle.h">
+      <Filter>Figures Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\CRectangle.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
   </ItemGroup>

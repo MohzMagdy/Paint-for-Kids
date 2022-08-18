@@ -1,4 +1,15 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  main.cpp
+  Output.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(189,40): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  Input.cpp
+  CTriangle.cpp
+  CRectangle.cpp
+  CFigure.cpp
+  CCircle.cpp
+  ApplicationManager.cpp
   AddTriaAction.cpp
-AddCircAction.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  PT-Project.vcxproj -> C:\Users\kiroa\Desktop\c++ projec\Paint-for-Kids-main\Debug\PT Project.exe
+  AddRectAction.cpp
+  AddCircAction.cpp
+  Generating Code...
+  PT-Project.vcxproj -> F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Debug\PT Project.exe
