@@ -129,7 +129,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions\AddCircAction.cpp" />
+    <ClCompile Include="Actions\AddLineAction.cpp" />
     <ClCompile Include="Actions\AddTriaAction.cpp" />
+    <ClCompile Include="Actions\ChangeFClrAction.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -177,7 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions\AddCircAction.h" />
+    <ClInclude Include="Actions\AddLineAction.h" />
     <ClInclude Include="Actions\AddTriaAction.h" />
+    <ClInclude Include="Actions\ChangeFClrAction.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />

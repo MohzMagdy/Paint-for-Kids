@@ -2,7 +2,7 @@
 #include "Output.h"
 
 
-Input::Input(window* pW) 
+Input::Input(window* pW)
 {
 	pWind = pW; //point to the passed window
 }
@@ -12,7 +12,7 @@ void Input::GetPointClicked(int &x, int &y) const
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
 }
 
-string Input::GetSrting(Output *pO) const 
+string Input::GetSrting(Output *pO) const
 {
 	string Label;
 	char Key;
@@ -24,7 +24,7 @@ string Input::GetSrting(Output *pO) const
 		if(Key == 13 )	//ENTER key is pressed
 			return Label;
 		if(Key == 8 )	//BackSpace is pressed
-			Label.resize(Label.size() -1 );			
+			Label.resize(Label.size() -1 );
 		else
 			Label+= Key;
 		pO->PrintMessage(Label);
@@ -33,7 +33,7 @@ string Input::GetSrting(Output *pO) const
 
 //This function reads the position where the user clicks to determine the desired action
 ActionType Input::GetUserAction() const
-{	
+{
 	int x,y;
 	pWind->WaitMouseClick(x, y);	//Get the coordinates of the user click
 
@@ -41,7 +41,7 @@ ActionType Input::GetUserAction() const
 	{
 		//[1] If user clicks on the Toolbar
 		if ( y >= 0 && y < UI.ToolBarHeight)
-		{	
+		{
 			//Check whick Menu item was clicked
 			//==> This assumes that menu items are lined up horizontally <==
 			int ClickedItemOrder = (x / UI.MenuItemWidth);
@@ -53,8 +53,10 @@ ActionType Input::GetUserAction() const
 			case ITM_RECT: return DRAW_RECT;
 			case ITM_CIRC: return DRAW_CIRC;
 			case ITM_TRIA: return DRAW_TRIA;
-			case ITM_EXIT: return EXIT;	
-			
+			case ITM_Line: return DRAW_Line;
+			case ITM_Change_FClr return Change_FClr;
+			case ITM_EXIT: return EXIT;
+
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -62,9 +64,9 @@ ActionType Input::GetUserAction() const
 		//[2] User clicks on the drawing area
 		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
 		{
-			return DRAWING_AREA;	
+			return DRAWING_AREA;
 		}
-		
+
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
@@ -74,11 +76,11 @@ ActionType Input::GetUserAction() const
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
 		return TO_PLAY;	//just for now. This should be updated
-	}	
+	}
 
 }
 /////////////////////////////////
-	
+
 Input::~Input()
 {
 }
