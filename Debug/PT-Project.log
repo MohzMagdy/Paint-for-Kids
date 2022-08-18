@@ -1,3 +1,4 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  ApplicationManager.cpp
+  Output.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\GUI\Output.cpp(241,40): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
   PT-Project.vcxproj -> F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Debug\PT Project.exe
