@@ -169,6 +169,7 @@
     <ClCompile Include="CMUgraphicsLib\windowinput.cpp" />
     <ClCompile Include="Figures\CCircle.cpp" />
     <ClCompile Include="Figures\CFigure.cpp" />
+    <ClCompile Include="Figures\CLine.cpp" />
     <ClCompile Include="Figures\CRectangle.cpp" />
     <ClCompile Include="Actions\AddRectAction.cpp" />
     <ClCompile Include="Figures\CTriangle.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="CMUgraphicsLib\jpeg\jversion.h" />
     <ClInclude Include="Figures\CCircle.h" />
     <ClInclude Include="Figures\CFigure.h" />
+    <ClInclude Include="Figures\CLine.h" />
     <ClInclude Include="Figures\CRectangle.h" />
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddRectAction.h" />
