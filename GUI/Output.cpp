@@ -101,7 +101,6 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
 	MenuItemImages[ITM_CIRC] = "images\\MenuItems\\Menu_Circ.jpg";
 	MenuItemImages[ITM_TRIA] = "images\\MenuItems\\Menu_Tria.jpg";
-	MenuItemImages[ITM_Line] = "images\\MenuItems\\Menu_line.png";
 	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_Line.jpg";
 	// MenuItemImages[ITM_Change_FClr] = "images\\MenuItems\\Menu_Tria.jpg";
 	MenuItemImages[ITM_CLR] = "images\\MenuItems\\Menu_Color.png";
@@ -276,17 +275,17 @@ void Output::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo, bool selected) co
 
 	pWind->SetPen(DrawingClr, LineGfxInfo.BorderWdth);	//Set Drawing color & width
 
-	drawstyle style;
-	if (LineGfxInfo.isFilled)
-	{
-		style = FILLED;
-		pWind->SetBrush(LineGfxInfo.FillClr);
-	}
-	else
-		style = FRAME;
+	//drawstyle style;
+	//if (LineGfxInfo.isFilled)
+	//{
+		//style = FILLED;
+		//pWind->SetBrush(LineGfxInfo.FillClr);
+	//}
+	//else
+		//style = FRAME;
 
 
-	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y);
 }
 
 
