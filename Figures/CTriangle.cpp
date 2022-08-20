@@ -12,3 +12,8 @@ void CTriangle::Draw(Output* pOut) const
 {
 	pOut->DrawTria(Point1, Point2, Point3, FigGfxInfo, Selected);
 }
+
+bool CTriangle::WithinMe(Point p)
+{
+	return true;
+}

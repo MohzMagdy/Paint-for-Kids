@@ -22,12 +22,12 @@ bool CRectangle::WithinMe(Point v)
 	double s = (a + b + c) / 2;
 	double A_v = pow(s * (s - a) * (s - b) * (s - c), 0.5);
 
-	if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && IsSelected)
+	if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && IsSelected())
 	{
 		SetSelected(false);
 		return false;
 	}
-	else if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && !IsSelected)
+	else if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && !IsSelected())
 	{
 		SetSelected(true);
 		return true;
