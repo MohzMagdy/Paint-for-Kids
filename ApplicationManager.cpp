@@ -119,6 +119,15 @@ Output *ApplicationManager::GetOutput() const
 {	return pOut; }
 
 ////////////////////////////////////////////////////////////////////////////////////
+
+int ApplicationManager::get_FigCount() 
+{ return FigCount; }
+
+CFigure* ApplicationManager::P_FigList() 
+{ return FigList[0];  }
+
+
+////////////////////////////////////////////////////////////////////////////////////
 //Destructor
 ApplicationManager::~ApplicationManager()
 {

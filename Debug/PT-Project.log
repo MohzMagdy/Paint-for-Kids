@@ -1,4 +1,41 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  ApplicationManager.cpp
+  CRectangle.cpp
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(25,92): warning C4551: function call missing argument list
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(25,92): error C3867: 'CFigure::IsSelected': non-standard syntax; use '&' to create a pointer to member
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(30,87): error C2276: '!': illegal operation on bound member function expression
+  CLine.cpp
+D:\cpp\N_Project\Paint-for-Kids\Figures\CLine.h(15,1): error C2143: syntax error: missing ';' before '}'
+D:\cpp\N_Project\Paint-for-Kids\Figures\CLine.cpp(20,37): warning C4551: function call missing argument list
+D:\cpp\N_Project\Paint-for-Kids\Figures\CLine.cpp(20,37): error C3867: 'CFigure::IsSelected': non-standard syntax; use '&' to create a pointer to member
+D:\cpp\N_Project\Paint-for-Kids\Figures\CLine.cpp(25,32): error C2276: '!': illegal operation on bound member function expression
+  CCircle.cpp
+D:\cpp\N_Project\Paint-for-Kids\Figures\CCircle.cpp(19,105): warning C4551: function call missing argument list
+D:\cpp\N_Project\Paint-for-Kids\Figures\CCircle.cpp(19,105): error C3867: 'CFigure::IsSelected': non-standard syntax; use '&' to create a pointer to member
+D:\cpp\N_Project\Paint-for-Kids\Figures\CCircle.cpp(24,100): error C2276: '!': illegal operation on bound member function expression
+  SelectAction.cpp
+  Generating Code...
+  Compiling...
+  main.cpp
+  CTriangle.cpp
+  AddRectAction.cpp
+  CFigure.cpp
+  AddTriaAction.cpp
+D:\cpp\N_Project\Paint-for-Kids\Actions\AddTriaAction.cpp(49): error C2259: 'CTriangle': cannot instantiate abstract class
+D:\cpp\N_Project\Paint-for-Kids\Figures\CTriangle.h(6): message : see declaration of 'CTriangle'
+D:\cpp\N_Project\Paint-for-Kids\Actions\AddTriaAction.cpp(49): message : due to following members:
+D:\cpp\N_Project\Paint-for-Kids\Actions\AddTriaAction.cpp(49): message : 'bool CFigure::WithinMe(Point)': is abstract
+D:\cpp\N_Project\Paint-for-Kids\Figures\CFigure.h(27): message : see declaration of 'CFigure::WithinMe'
+D:\cpp\N_Project\Paint-for-Kids\Actions\AddTriaAction.cpp(49,30): error C2259: 'CTriangle': cannot instantiate abstract class
+D:\cpp\N_Project\Paint-for-Kids\Figures\CTriangle.h(6): message : see declaration of 'CTriangle'
+D:\cpp\N_Project\Paint-for-Kids\Actions\AddTriaAction.cpp(49,30): message : due to following members:
+D:\cpp\N_Project\Paint-for-Kids\Actions\AddTriaAction.cpp(49,30): message : 'bool CFigure::WithinMe(Point)': is abstract
+D:\cpp\N_Project\Paint-for-Kids\Figures\CFigure.h(27): message : see declaration of 'CFigure::WithinMe'
+  AddLineAction.cpp
+D:\cpp\N_Project\Paint-for-Kids\Figures\CLine.h(15,1): error C2143: syntax error: missing ';' before '}'
+  AddCircAction.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
   Output.cpp
-D:\cpp\N_Project\Paint-for-Kids\GUI\Output.cpp(242,40): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-  PT-Project.vcxproj -> D:\cpp\N_Project\Paint-for-Kids\Debug\PT Project.exe
+  Input.cpp
+  ChangeColorAction.cpp

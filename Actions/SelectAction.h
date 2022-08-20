@@ -3,6 +3,11 @@
 
 class SelectAction : public Action
 {
+private:
+	Point v1;
+
+public:
+
 	SelectAction(ApplicationManager* pApp);
 
 	virtual void ReadActionParameters();

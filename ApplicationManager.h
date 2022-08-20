@@ -36,6 +36,10 @@ public:
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output
 	void UpdateInterface() const;	//Redraws all the drawing window	
+
+	int get_FigCount();         //These will be used whenever we need to iterate on the figures
+	CFigure* P_FigList();
+
 };
 
 #endif

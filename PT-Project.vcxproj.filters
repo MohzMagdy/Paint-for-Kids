@@ -166,7 +166,7 @@
     <ClCompile Include="Actions\ChangeColorAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
-    <ClCompile Include="SelectAction.cpp">
+    <ClCompile Include="Actions\SelectAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -277,7 +277,7 @@
     <ClInclude Include="Actions\ChangeColorAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="SelectAction.h">
+    <ClInclude Include="Actions\SelectAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
   </ItemGroup>
