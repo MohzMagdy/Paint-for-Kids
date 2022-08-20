@@ -29,6 +29,7 @@ public:
 
 	///Make similar functions for drawing all other figures.
 
+
 	void PrintMessage(string msg) const;	//Print a message on Status bar
 
 	color getCrntDrawColor() const;	//get current drwawing color
