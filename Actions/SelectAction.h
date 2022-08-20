@@ -1,9 +1,12 @@
 #pragma once
-#include "Actions/Action.h"
+#include "Action.h"
 
-class SelectAction :
-	public Action
+class SelectAction : public Action
 {
+	SelectAction(ApplicationManager* pApp);
 
+	virtual void ReadActionParameters();
+
+	virtual void Execute();
 };
 

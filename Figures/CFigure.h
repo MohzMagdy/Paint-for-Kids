@@ -24,6 +24,9 @@ public:
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
+	virtual bool WithinMe(Point c1) = 0;
+	virtual void PrintInfo();   //still not defined; it is supposed to print the fig info
+
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure
 

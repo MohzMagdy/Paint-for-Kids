@@ -11,6 +11,7 @@ private:
 public:
 	CLine(Point, Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
+	virtual bool CLine::WithinMe(Point v)
 };
 
 #endif // CLINE_H_INCLUDED

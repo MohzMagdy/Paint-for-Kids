@@ -4,6 +4,7 @@
 #include "Actions\AddTriaAction.h"
 #include "Actions\AddLineAction.h"
 #include "Actions\ChangeColorAction.h"
+#include "Actions\SelectAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -54,6 +55,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case CHNG_DRAW_CLR:
 			pAct = new ChangeColorAction(this);
+			break;
+
+		case SELECT:
+			pAct = new SelectAction(this);
 			break;
 
 		case EXIT:
