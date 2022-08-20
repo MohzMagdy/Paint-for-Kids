@@ -9,7 +9,6 @@ class SelectAction : public Action
 {
 protected:
 	Point v1;
-	static int SelectCounter;
 
 public:
 

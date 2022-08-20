@@ -1,20 +1,3 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  AddCircAction.cpp
-  Generating Code...
-  Compiling...
-  CTriangle.cpp
-  CRectangle.cpp
   CLine.cpp
-  CFigure.cpp
-  CCircle.cpp
-  ApplicationManager.cpp
-  SelectAction.cpp
-  AddTriaAction.cpp
-  AddRectAction.cpp
-  AddLineAction.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  main.cpp
-  ChangeColorAction.cpp
-AddCircAction.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   PT-Project.vcxproj -> D:\cpp\N_Project\Paint-for-Kids\Debug\PT Project.exe

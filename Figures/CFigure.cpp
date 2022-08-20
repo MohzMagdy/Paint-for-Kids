@@ -1,10 +1,13 @@
 #include "CFigure.h"
 
+
 CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
 	Selected = false;
 }
+
+int CFigure::SelectCounter = 0;
 
 void CFigure::SetSelected(bool s)
 {	Selected = s; }
@@ -24,6 +27,11 @@ void CFigure::ChngFillClr(color Fclr)
 double CFigure::Cal_Length(Point p1, Point p2)
 {
 	return pow((pow((p1.x - p2.x), 2) + pow((p1.y - p2.y), 2)), 0.5);
+}
+
+int CFigure::GetSelectCounter()
+{
+	return SelectCounter;
 }
 
 

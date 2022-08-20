@@ -19,11 +19,13 @@ bool CCircle::WithinMe(Point v)
 	if ((Cal_Length(centerPoint, v) <= radius) && IsSelected())
 	{
 		SetSelected(false);
+		SelectCounter--;
 		return true;
 	}
 	else if ((Cal_Length(centerPoint, v) <= radius) && !IsSelected())
 	{
 		SetSelected(true);
+		SelectCounter++;
 		return true;
 	}                         // Here we should print the figure info as well *mendokusai -_-*
 	else

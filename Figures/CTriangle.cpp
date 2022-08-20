@@ -25,11 +25,13 @@ bool CTriangle::WithinMe(Point p)
 	if ((A1 + A2 + A3 <= GetArea()) && IsSelected())
 	{
 		SetSelected(false);
+		SelectCounter--;
 		return true;
 	}
 	else if ((A1 + A2 + A3 <= GetArea()) && !IsSelected())
 	{
 		SetSelected(true);
+		SelectCounter++;
 		return true;
 	}                           // Here we should print the figure info as well *mendokusai -_-*
 	else

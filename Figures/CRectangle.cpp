@@ -23,11 +23,13 @@ bool CRectangle::WithinMe(Point v)
 	if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && IsSelected())
 	{
 		SetSelected(false);
+		SelectCounter--;
 		return true;
 	}
 	else if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && !IsSelected())
 	{
 		SetSelected(true);
+		SelectCounter++;
 		return true;
 	}                           // Here we should print the figure info as well *mendokusai -_-*
 	else
@@ -38,15 +40,17 @@ bool CRectangle::WithinMe(Point v)
 
 double CRectangle::GetArea()
 {
-	return (Corner1.x - Corner2.x) * (Corner1.y - Corner2.y);
+	return abs((Corner1.x - Corner2.x) * (Corner1.y - Corner2.y));
 }
 
 double CRectangle::GetPerimeter()
 {
-	return 2 * ((Corner1.x - Corner2.x) + (Corner1.y - Corner2.y));
+	return 2 * (abs((Corner1.x - Corner2.x)) + abs((Corner1.y - Corner2.y)));
 }
 
 string CRectangle::PrintInfo()
 {
-	return "Rectangle: Width = " + to_string(Corner1.x - Corner2.x) + ", Length = " + to_string(Corner1.y - Corner2.y) + ", Area = " + to_string(GetArea()) + ", Perimeter = " + to_string(GetPerimeter());
+	float w = abs(Corner1.x - Corner2.x);
+	float l = abs(Corner1.y - Corner2.y);
+	return "Rectangle: Width = " + to_string(w) + ", Length = " + to_string(l) + ", Area = " + to_string(float(GetArea())) + ", Perimeter = " + to_string(float(GetPerimeter()));
 }

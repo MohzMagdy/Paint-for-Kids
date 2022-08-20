@@ -14,9 +14,11 @@ protected:
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
 	
+	
 	/// Add more parameters if needed.
 
 public:
+	static int SelectCounter;
 	CFigure(GfxInfo FigureGfxInfo);
 	void SetSelected(bool s);	//select/unselect the figure
 	bool IsSelected() const;	//check whether fig is selected
@@ -30,7 +32,8 @@ public:
 	double Cal_Length(Point p1, Point P2);
 	virtual double GetArea() = 0;
 	virtual double GetPerimeter() = 0;
-	virtual string PrintInfo() = 0;   //still not defined; it is supposed to print the fig info
+	virtual string PrintInfo() = 0;   
+	static int GetSelectCounter();
 
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure

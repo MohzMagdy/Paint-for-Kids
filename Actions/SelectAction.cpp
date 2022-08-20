@@ -19,8 +19,11 @@ void SelectAction::ReadActionParameters()
 	{
 		if ((pManager->FigList[i])->WithinMe(v1))
 		{
-			pOut->PrintMessage(pManager->FigList[i]->PrintInfo());
 			pManager->FigList[i]->Draw(pOut);
+			if (pManager->FigList[i]->GetSelectCounter() > 1)
+				pOut->PrintMessage("Number of Selected Figures is " + to_string(pManager->FigList[i]->GetSelectCounter()));
+			else
+				pOut->PrintMessage(pManager->FigList[i]->PrintInfo());
 			break;
 		}
 	}

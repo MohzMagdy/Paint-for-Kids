@@ -1,10 +1,11 @@
 #include "CLine.h"
 
+
 CLine::CLine(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
 	Point1 = P1;
 	Point2 = P2;
-	length = Cal_Length(Point1, Point2);
+	length = Cal_Length(P1, P2);
 }
 
 
@@ -15,20 +16,27 @@ void CLine::Draw(Output* pOut) const
 
 bool CLine::WithinMe(Point v)
 {
-	if ((Cal_Length(Point1, v)+ Cal_Length(Point2, v) <= length) && IsSelected())
+	if ((Cal_Length(Point1, v) + Cal_Length(Point2, v) == length) && IsSelected())
 	{
 		SetSelected(false);
+		SelectCounter--;
 		return true;
 	}
-	else if ((Cal_Length(Point1, v) + Cal_Length(Point2, v) <= length) && !IsSelected())
+	else if ((Cal_Length(Point1, v) + Cal_Length(Point2, v) == length) && !IsSelected())
 	{
 		SetSelected(true);
+		SelectCounter++;
 		return true;
-	}                         // Here we should print the figure info as well *mendokusai -_-*
+	}                           // Here we should print the figure info as well *mendokusai -_-*
 	else
 	{
 		return false;
 	}
+		
+	/*if ((Point1.x > Point2.x) && (Point1.y > Point2.y))
+	{
+		if (Cal_Length(Point1, v) + Cal_Length(Point1, v))
+	}*/
 }
 
 double CLine::GetArea()
