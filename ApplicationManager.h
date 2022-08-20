@@ -13,7 +13,7 @@ class ApplicationManager
 
 private:
 	int FigCount;		//Actual number of figures
-	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
+	
 
 	//Pointers to Input and Output classes
 	Input *pIn;
@@ -39,7 +39,7 @@ public:
 
 	int get_FigCount();         //These will be used whenever we need to iterate on the figures
 	CFigure* P_FigList();
-
+	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
 };
 
 #endif

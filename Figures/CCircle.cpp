@@ -15,21 +15,30 @@ void CCircle::Draw(Output* pOut) const
 
 bool CCircle::WithinMe(Point v)
 {
-	double radius = pow((pow((edgePoint.x - centerPoint.x), 2) + pow((edgePoint.y - centerPoint.y), 2)), 0.5);
-	if ((pow((pow((v.x - centerPoint.x), 2) + pow((v.y - centerPoint.y), 2)), 0.5) <= radius) && IsSelected())
+	radius = Cal_Length(centerPoint, edgePoint);
+	if ((Cal_Length(centerPoint, v) <= radius) && IsSelected())
 	{
 		SetSelected(false);
-		return false;
+		return true;
 	}
-	else if ((pow((pow((v.x - centerPoint.x), 2) + pow((v.y - centerPoint.y), 2)), 0.5) <= radius) && !IsSelected())
+	else if ((Cal_Length(centerPoint, v) <= radius) && !IsSelected())
 	{
 		SetSelected(true);
 		return true;
 	}                         // Here we should print the figure info as well *mendokusai -_-*
 	else
 	{
-		SetSelected(false);
 		return false;
 	}
+}
 
+double CCircle::GetArea()
+{ return 3.14 * pow(radius, 2);  }
+
+double CCircle::GetPerimeter()
+{  return 3.14 * radius * 2; }
+
+string CCircle::PrintInfo()
+{
+	return "Circle: center = (" + to_string(centerPoint.x) + ", " + to_string(centerPoint.y) + "), radius = " + to_string(radius) + ", Area = " + to_string(GetArea()) + ", Perimeter = " + to_string(GetPerimeter());
 }

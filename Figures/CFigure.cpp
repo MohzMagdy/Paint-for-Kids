@@ -21,5 +21,9 @@ void CFigure::ChngFillClr(color Fclr)
 	FigGfxInfo.FillClr = Fclr; 
 }
 
+double CFigure::Cal_Length(Point p1, Point p2)
+{
+	return pow((pow((p1.x - p2.x), 2) + pow((p1.y - p2.y), 2)), 0.5);
+}
 
 

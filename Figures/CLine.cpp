@@ -4,6 +4,7 @@ CLine::CLine(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
 	Point1 = P1;
 	Point2 = P2;
+	length = Cal_Length(Point1, Point2);
 }
 
 
@@ -14,23 +15,33 @@ void CLine::Draw(Output* pOut) const
 
 bool CLine::WithinMe(Point v)
 {
-	double a = pow((pow((v.x - Point1.x), 2) + pow((v.y - Point1.y), 2)), 0.5);
-	double b = pow((pow((v.x - Point2.x), 2) + pow((Point2.y - v.y), 2)), 0.5);
-	double length = pow((pow((Point1.x - Point2.x), 2) + pow((Point1.y - Point2.y), 2)), 0.5);
-	if ((a + b <= length) && IsSelected())
+	if ((Cal_Length(Point1, v)+ Cal_Length(Point2, v) <= length) && IsSelected())
 	{
 		SetSelected(false);
-		return false;
+		return true;
 	}
-	else if ((a + b <= length) && !IsSelected())
+	else if ((Cal_Length(Point1, v) + Cal_Length(Point2, v) <= length) && !IsSelected())
 	{
 		SetSelected(true);
 		return true;
 	}                         // Here we should print the figure info as well *mendokusai -_-*
 	else
 	{
-		SetSelected(false);
 		return false;
 	}
+}
 
+double CLine::GetArea()
+{
+	return 0;
+}
+
+double CLine::GetPerimeter()
+{
+	return 0;
+}
+
+string CLine::PrintInfo()
+{
+	return "Line: length = " + to_string(length) + ", starts from(" + to_string(Point1.x) + ", " + to_string(Point1.y) + "), to(" + to_string(Point2.x) + ", " + to_string(Point2.y) + ")" ;
 }

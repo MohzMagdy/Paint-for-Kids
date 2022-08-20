@@ -1,5 +1,5 @@
 #include "CRectangle.h"
-#include <cmath>
+
 
 CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
@@ -16,16 +16,14 @@ void CRectangle::Draw(Output* pOut) const
 
 bool CRectangle::WithinMe(Point v)
 {
-	double a = pow((pow((Corner1.x - Corner2.x), 2) + pow((Corner1.y - Corner2.y), 2)), 0.5);
-	double b = pow((pow((Corner1.x - v.x), 2) + pow((Corner1.y - v.y), 2)), 0.5);
-	double c = pow((pow((Corner2.x - v.x), 2) + pow((Corner2.y - v.y), 2)), 0.5);
-	double s = (a + b + c) / 2;
-	double A_v = pow(s * (s - a) * (s - b) * (s - c), 0.5);
+
+	double s = (Cal_Length(Corner1, Corner2) + Cal_Length(Corner1, v) + Cal_Length(Corner2, v)) / 2;
+	double A_v = pow(s * (s - Cal_Length(Corner1, Corner2)) * (s - Cal_Length(Corner1, v)) * (s - Cal_Length(Corner2, v)), 0.5);
 
 	if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && IsSelected())
 	{
 		SetSelected(false);
-		return false;
+		return true;
 	}
 	else if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && !IsSelected())
 	{
@@ -34,9 +32,21 @@ bool CRectangle::WithinMe(Point v)
 	}                           // Here we should print the figure info as well *mendokusai -_-*
 	else
 	{
-		SetSelected(false);
 		return false;
 	}
-		
+}
 
+double CRectangle::GetArea()
+{
+	return (Corner1.x - Corner2.x) * (Corner1.y - Corner2.y);
+}
+
+double CRectangle::GetPerimeter()
+{
+	return 2 * ((Corner1.x - Corner2.x) + (Corner1.y - Corner2.y));
+}
+
+string CRectangle::PrintInfo()
+{
+	return "Rectangle: Width = " + to_string(Corner1.x - Corner2.x) + ", Length = " + to_string(Corner1.y - Corner2.y) + ", Area = " + to_string(GetArea()) + ", Perimeter = " + to_string(GetPerimeter());
 }

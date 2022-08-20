@@ -12,6 +12,9 @@ public:
 	CRectangle(Point , Point, GfxInfo FigureGfxInfo );
 	virtual void Draw(Output* pOut) const;
 	virtual bool WithinMe(Point);
+	virtual string PrintInfo();
+	virtual double GetArea();
+	virtual double GetPerimeter();
 };
 
 

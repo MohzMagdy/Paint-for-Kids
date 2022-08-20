@@ -3,6 +3,8 @@
 
 #include "..\defs.h"
 #include "..\GUI\Output.h"
+#include <cmath>
+#include <string>
 
 //Base class for all figures
 class CFigure
@@ -25,7 +27,10 @@ public:
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
 	virtual bool WithinMe(Point c1) = 0;
-	virtual void PrintInfo();   //still not defined; it is supposed to print the fig info
+	double Cal_Length(Point p1, Point P2);
+	virtual double GetArea() = 0;
+	virtual double GetPerimeter() = 0;
+	virtual string PrintInfo() = 0;   //still not defined; it is supposed to print the fig info
 
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure
