@@ -1,11 +1,12 @@
 #include "CLine.h"
 
 
+
 CLine::CLine(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
 	Point1 = P1;
 	Point2 = P2;
-	length = Cal_Length(P1, P2);
+	length = Cal_Length(Point1, Point2);
 }
 
 
@@ -14,15 +15,16 @@ void CLine::Draw(Output* pOut) const
 	pOut->DrawLine(Point1, Point2, FigGfxInfo, Selected);
 }
 
-bool CLine::WithinMe(Point v)
+bool CLine::WithinMe(Point v, Output* pOut)
 {
-	if ((Cal_Length(Point1, v) + Cal_Length(Point2, v) == length) && IsSelected())
+	int w = (pOut->getCrntPenWidth()) / 3;
+	if (((Cal_Length(Point1, v) + Cal_Length(Point2, v) <= (length + w)) && (Cal_Length(Point1, v) + Cal_Length(Point2, v) >= (length - w))) && IsSelected())
 	{
 		SetSelected(false);
 		SelectCounter--;
 		return true;
 	}
-	else if ((Cal_Length(Point1, v) + Cal_Length(Point2, v) == length) && !IsSelected())
+	else if (((Cal_Length(Point1, v) + Cal_Length(Point2, v) <= (length + w)) && (Cal_Length(Point1, v) + Cal_Length(Point2, v) >= (length - w))) && !IsSelected())
 	{
 		SetSelected(true);
 		SelectCounter++;
@@ -36,6 +38,7 @@ bool CLine::WithinMe(Point v)
 	/*if ((Point1.x > Point2.x) && (Point1.y > Point2.y))
 	{
 		if (Cal_Length(Point1, v) + Cal_Length(Point1, v))
+		(Cal_Length(Point1, v) + Cal_Length(Point2, v)  length + 3) || (Cal_Length(Point1, v) + Cal_Length(Point2, v) == length - 3)
 	}*/
 }
 

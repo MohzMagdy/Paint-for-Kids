@@ -12,7 +12,7 @@ private:
 public:
 	CTriangle(Point, Point, Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
-	virtual bool WithinMe(Point p);
+	virtual bool WithinMe(Point p, Output* pOut);
 	virtual double GetArea();
 	virtual double GetPerimeter();
 	virtual string PrintInfo();

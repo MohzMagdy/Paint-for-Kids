@@ -14,7 +14,7 @@ void CRectangle::Draw(Output* pOut) const
 	pOut->DrawRect(Corner1, Corner2, FigGfxInfo, Selected);
 }
 
-bool CRectangle::WithinMe(Point v)
+bool CRectangle::WithinMe(Point v, Output* pOut)
 {
 
 	double s = (Cal_Length(Corner1, Corner2) + Cal_Length(Corner1, v) + Cal_Length(Corner2, v)) / 2;

@@ -12,7 +12,7 @@ private:
 public:
 	CCircle(Point, Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
-	virtual bool WithinMe(Point);
+	virtual bool WithinMe(Point, Output* pOut);
 	virtual double GetArea();
 	virtual double GetPerimeter();
 	virtual string PrintInfo();

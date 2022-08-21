@@ -28,7 +28,7 @@ public:
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 
-	virtual bool WithinMe(Point c1) = 0;
+	virtual bool WithinMe(Point c1, Output* pOut) = 0;
 	double Cal_Length(Point p1, Point P2);
 	virtual double GetArea() = 0;
 	virtual double GetPerimeter() = 0;

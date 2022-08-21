@@ -13,7 +13,7 @@ void CCircle::Draw(Output* pOut) const
 	pOut->DrawCirc(centerPoint, edgePoint, FigGfxInfo, Selected);
 }
 
-bool CCircle::WithinMe(Point v)
+bool CCircle::WithinMe(Point v, Output* pOut)
 {
 	radius = Cal_Length(centerPoint, edgePoint);
 	if ((Cal_Length(centerPoint, v) <= radius) && IsSelected())

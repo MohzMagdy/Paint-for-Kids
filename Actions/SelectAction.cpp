@@ -17,7 +17,7 @@ void SelectAction::ReadActionParameters()
 
 	for (int i = (pManager->get_FigCount() - 1); i > -1; i--)
 	{
-		if ((pManager->FigList[i])->WithinMe(v1))
+		if ((pManager->FigList[i])->WithinMe(v1, pOut))
 		{
 			pManager->FigList[i]->Draw(pOut);
 			if (pManager->FigList[i]->GetSelectCounter() > 1)

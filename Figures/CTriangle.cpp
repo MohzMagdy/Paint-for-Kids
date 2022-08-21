@@ -13,7 +13,7 @@ void CTriangle::Draw(Output* pOut) const
 	pOut->DrawTria(Point1, Point2, Point3, FigGfxInfo, Selected);
 }
 
-bool CTriangle::WithinMe(Point p)
+bool CTriangle::WithinMe(Point p, Output* pOut)
 {
 	double s1 = (Cal_Length(Point1, Point2) + Cal_Length(Point1, p) + Cal_Length(Point2, p)) / 2;
 	double A1 = pow(s1 * (s1 - Cal_Length(Point1, Point2)) * (s1 - Cal_Length(Point1, p)) * (s1 - Cal_Length(Point2, p)), 0.5);
@@ -22,13 +22,13 @@ bool CTriangle::WithinMe(Point p)
 	double s3 = (Cal_Length(Point2, Point3) + Cal_Length(Point2, p) + Cal_Length(Point3, p)) / 2;
 	double A3 = pow(s3 * (s3 - Cal_Length(Point2, Point3)) * (s3 - Cal_Length(Point2, p)) * (s3 - Cal_Length(Point3, p)), 0.5);
 
-	if ((A1 + A2 + A3 <= GetArea()) && IsSelected())
+	if (((A1 + A2 + A3) <= GetArea()) && IsSelected())
 	{
 		SetSelected(false);
 		SelectCounter--;
 		return true;
 	}
-	else if ((A1 + A2 + A3 <= GetArea()) && !IsSelected())
+	else if (((A1 + A2 + A3) <= GetArea()) && !IsSelected())
 	{
 		SetSelected(true);
 		SelectCounter++;
@@ -43,13 +43,13 @@ bool CTriangle::WithinMe(Point p)
 
 double CTriangle::GetArea()
 {
-	double s = (Cal_Length(Point1, Point2) + Cal_Length(Point1, Point2) + Cal_Length(Point2, Point3)) / 2;
-	return pow(s * (s - Cal_Length(Point1, Point2)) * (s - Cal_Length(Point1, Point2)) * (s - Cal_Length(Point2, Point3)), 0.5);
+	double s = (Cal_Length(Point1, Point2) + Cal_Length(Point1, Point3) + Cal_Length(Point2, Point3)) / 2;
+	return pow(s * (s - Cal_Length(Point1, Point2)) * (s - Cal_Length(Point1, Point3)) * (s - Cal_Length(Point2, Point3)), 0.5);
 }
 
 double CTriangle::GetPerimeter()
 {
-	return Cal_Length(Point1, Point2) + Cal_Length(Point1, Point2) + Cal_Length(Point2, Point3);
+	return Cal_Length(Point1, Point2) + Cal_Length(Point1, Point3) + Cal_Length(Point2, Point3);
 }
 
 string CTriangle::PrintInfo()
