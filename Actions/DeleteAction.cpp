@@ -19,6 +19,7 @@ void DeleteAction::ReadActionParameters()
 			{
 				pManager->FigList[i + j] = pManager->FigList[i + k];
 			}
+			i = i - 1;
 			delete pManager->FigList[pManager->get_FigCount() - 1];
 			pManager->DelFigure();
 			pOut->ClearDrawArea();
