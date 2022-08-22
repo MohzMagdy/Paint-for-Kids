@@ -29,7 +29,7 @@ void AddTriaAction::ReadActionParameters()
 
 	pIn->GetPointClicked(P3.x, P3.y);
 
-	TriaGfxInfo.isFilled = false;	//default is not filled
+	TriaGfxInfo.isFilled = pOut->getCrntStyle();	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	TriaGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	TriaGfxInfo.FillClr = pOut->getCrntFillColor();

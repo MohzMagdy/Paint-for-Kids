@@ -55,9 +55,18 @@ ActionType Input::GetUserAction() const
 			case ITM_CIRC: return DRAW_CIRC;
 			case ITM_TRIA: return DRAW_TRIA;
 			case ITM_LINE: return DRAW_LINE;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			case ITM_SELECT: return SELECT;
 			case ITM_Delete: return DEL;
+=======
+			case ITM_FILL: return CHNG_FILL_CLR;
+>>>>>>> Stashed changes
+=======
+			case ITM_FILL: return CHNG_FILL_CLR;
+>>>>>>> Stashed changes
 			case ITM_CLR: return CHNG_DRAW_CLR;
+			case ITM_BORDER: return CHNG_PEN_SIZE;
 			case ITM_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -95,6 +104,28 @@ ActionType Input::GetUserAction() const
 			case CLR_RED: return SET_CLR_RED;
 			case CLR_GREEN: return SET_CLR_GREEN;
 			case CLR_BLUE: return SET_CLR_BLUE;
+			case CLR_NONE: return SET_CLR_NONE;
+
+			default: return EMPTY;	//A click on empty place in desgin toolbar
+			}
+		}
+		break;
+
+	case MODE_PEN: //GUI is in PEN switch mode
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			//Check whick Menu item was clicked
+			//==> This assumes that menu items are lined up horizontally <==
+			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			//Divide x coord of the point clicked by the menu item width (int division)
+			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
+
+			switch (ClickedItemOrder)
+			{
+			case PEN_3PT: return SET_PEN_3PT;
+			case PEN_5PT: return SET_PEN_5PT;
+			case PEN_7PT: return SET_PEN_7PT;
+			case PEN_10PT: return SET_PEN_10PT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}

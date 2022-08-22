@@ -25,7 +25,7 @@ void AddCircAction::ReadActionParameters()
 	//Read 2nd corner and store in point P2
 	pIn->GetPointClicked(edge.x, edge.y);
 
-	CircGfxInfo.isFilled = false;	//default is not filled
+	CircGfxInfo.isFilled = pOut->getCrntStyle();	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	CircGfxInfo.DrawClr = pOut->getCrntDrawColor();
 	CircGfxInfo.FillClr = pOut->getCrntFillColor();

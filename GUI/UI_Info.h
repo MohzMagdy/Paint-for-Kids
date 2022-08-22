@@ -11,6 +11,7 @@ enum GUI_MODE	//Graphical user interface mode
 {
 	MODE_DRAW,	//Drawing mode (startup mode)
 	MODE_CLR,
+	MODE_PEN,
 	MODE_PLAY	//Playing mode
 };
 
@@ -28,6 +29,9 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	//TODO: Add more items names here
 
 	ITM_CLR,		//Color item
+	ITM_FILL, 
+	ITM_BORDER,
+
 	ITM_EXIT,		//Exit item
 	
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
@@ -39,8 +43,19 @@ enum ColorMenuItem
 	CLR_RED,
 	CLR_GREEN,
 	CLR_BLUE,
+	CLR_NONE,
 
 	DRAW_CLR_COUNT
+};
+
+enum PenMenuItem
+{
+	PEN_3PT,
+	PEN_5PT,
+	PEN_7PT,
+	PEN_10PT,
+
+	PEN_SIZE_COUNT
 };
 
 enum PlayMenuItem //The items of the Play menu (you should add more items)
@@ -74,6 +89,7 @@ struct UI_Info	//User Interface Info.
 
 	color DrawColor;		//Drawing color
 	color FillColor;		//Filling color
+	bool Style = false;
 	color HighlightColor;	//Highlighting color
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color

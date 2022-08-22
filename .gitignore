@@ -2,25 +2,4 @@
 CMUgraphicsLib
 _UpgradeReport_Files
 .vscode
-Debug/vc143.pdb
-Debug/vc143.idb
-Debug/PT-Project.log
-Debug/PT Project.tlog/CL.write.1.tlog
-Debug/PT Project.pdb
-Debug/PT Project.ilk
-Debug/PT Project.exe
-Debug/PT Project.bsc
-Debug/Output.obj
-Debug/main.obj
-Debug/Input.obj
-Debug/CTriangle.obj
-Debug/CRectangle.obj
-Debug/CLine.obj
-Debug/ChangeColorAction.obj
-Debug/CFigure.obj
-Debug/CCircle.obj
-Debug/ApplicationManager.obj
-Debug/AddTriaAction.obj
-Debug/AddRectAction.obj
-Debug/AddLineAction.obj
-Debug/AddCircAction.obj
+Debug

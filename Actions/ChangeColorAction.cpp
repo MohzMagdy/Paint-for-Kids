@@ -30,9 +30,12 @@ void ChangeColorAction::ReadActionParameters()
 	case SET_CLR_BLUE:
 		UI.DrawColor = BLUE;
 		break;
+	default:
+		break;
 	}
 
 	UI.InterfaceMode = UI.PrevInterfaceMode;
+	pOut->ClearStatusBar();
 	pOut->CreateDrawToolBar();
 }
 

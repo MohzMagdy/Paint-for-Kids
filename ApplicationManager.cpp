@@ -4,8 +4,18 @@
 #include "Actions\AddTriaAction.h"
 #include "Actions\AddLineAction.h"
 #include "Actions\ChangeColorAction.h"
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #include "Actions\SelectAction.h"
 #include "Actions\DeleteAction.h"
+=======
+#include "Actions\ChangeFillingAction.h"
+#include "Actions\ChangeBorderAction.h"
+>>>>>>> Stashed changes
+=======
+#include "Actions\ChangeFillingAction.h"
+#include "Actions\ChangeBorderAction.h"
+>>>>>>> Stashed changes
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -58,12 +68,27 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new ChangeColorAction(this);
 			break;
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		case SELECT:
 			pAct = new SelectAction(this);
 			break;
 
 		case DEL:
 			pAct = new DeleteAction(this);
+=======
+=======
+>>>>>>> Stashed changes
+		case CHNG_FILL_CLR:
+			pAct = new ChangeFillingAction(this);
+			break;
+
+		case CHNG_PEN_SIZE:
+			pAct = new ChangeBorderAction(this);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 			break;
 
 		case EXIT:

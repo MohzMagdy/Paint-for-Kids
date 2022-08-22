@@ -31,23 +31,6 @@ Output::Output()
 	pWind->ChangeTitle("Paint for Kids - Programming Techniques Project");
 
 	CreateDrawToolBar();
-	
-	switch (UI.InterfaceMode)
-	{
-	case MODE_DRAW:
-		CreateDrawToolBar();
-		break;
-	case MODE_CLR:
-		CreateColorToolBar();
-		break;
-	case MODE_PLAY:
-		CreatePlayToolBar();
-		break;
-	default:
-		CreateDrawToolBar();
-		break;
-	}
-
 	CreateStatusBar();
 }
 
@@ -103,9 +86,18 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_TRIA] = "images\\MenuItems\\Menu_Tria.jpg";
 	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_line.jpg";
 	MenuItemImages[ITM_CLR] = "images\\MenuItems\\Menu_Color.png";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	//MenuItemImages[ITM_Change_FClr] = "images\\MenuItems\\Change_Clr.jpg";
 	MenuItemImages[ITM_SELECT] = "images\\MenuItems\\Menu_Tria.jpg";
 	MenuItemImages[ITM_Delete] = "images\\MenuItems\\Menu_Tria.jpg";
+=======
+
+>>>>>>> Stashed changes
+=======
+	MenuItemImages[ITM_FILL] = "images\\MenuItems\\Menu_Filling.jpg";
+	MenuItemImages[ITM_BORDER] = "images\\MenuItems\\Menu_Border.jpg";
+>>>>>>> Stashed changes
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -132,6 +124,7 @@ void Output::ClearToolBar() const
 
 void Output::CreateColorToolBar() const
 {
+	//Saving previous toolbar mode to return it after picking
 	UI.PrevInterfaceMode = UI.InterfaceMode;
 	UI.InterfaceMode = MODE_CLR;
 	ClearToolBar();
@@ -140,6 +133,27 @@ void Output::CreateColorToolBar() const
 	MenuItemImages[CLR_RED] = "images\\ColorItems\\Color_Red.jpg";
 	MenuItemImages[CLR_GREEN] = "images\\ColorItems\\Color_Green.jpg";
 	MenuItemImages[CLR_BLUE] = "images\\ColorItems\\Color_Blue.jpg";
+	MenuItemImages[CLR_NONE] = "images\\ColorItems\\Color_None.jpg";
+
+	for (int i = 0; i < DRAW_CLR_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+}
+
+void Output::CreatePenToolBar() const
+{
+	//Saving previous toolbar mode to return it after picking
+	UI.PrevInterfaceMode = UI.InterfaceMode;
+	UI.InterfaceMode = MODE_PEN;
+	ClearToolBar();
+
+	string MenuItemImages[PEN_SIZE_COUNT];
+	MenuItemImages[PEN_3PT] = "images\\PenItems\\Pen_3pt.jpg";
+	MenuItemImages[PEN_5PT] = "images\\PenItems\\Pen_5pt.jpg";
+	MenuItemImages[PEN_7PT] = "images\\PenItems\\Pen_7pt.jpg";
+	MenuItemImages[PEN_10PT] = "images\\PenItems\\Pen_10pt.jpg";
 
 	for (int i = 0; i < DRAW_CLR_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
@@ -190,6 +204,9 @@ color Output::getCrntFillColor() const	//get current filling color
 
 int Output::getCrntPenWidth() const		//get current pen width
 {	return UI.PenWidth;	}
+
+bool Output::getCrntStyle() const
+{	return UI.Style;	}
 
 //======================================================================================//
 //								Figures Drawing Functions								//

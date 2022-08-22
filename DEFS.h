@@ -13,7 +13,15 @@ enum ActionType //The actions supported (you can add more if needed)
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	SELECT,
+=======
+	CHNG_PEN_SIZE,
+>>>>>>> Stashed changes
+=======
+	CHNG_PEN_SIZE,
+>>>>>>> Stashed changes
 	DEL,			//Delete a figure(s)
 	MOVE,			//Move a figure(s)
 	RESIZE,			//Resize a figure(s)
@@ -27,6 +35,12 @@ enum ActionType //The actions supported (you can add more if needed)
 	SET_CLR_RED,
 	SET_CLR_GREEN,
 	SET_CLR_BLUE,
+	SET_CLR_NONE,
+
+	SET_PEN_3PT,
+	SET_PEN_5PT,
+	SET_PEN_7PT,
+	SET_PEN_10PT,
 
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar

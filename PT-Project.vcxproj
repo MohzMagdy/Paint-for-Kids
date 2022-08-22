@@ -132,9 +132,16 @@
     <ClCompile Include="Actions\AddCircAction.cpp" />
     <ClCompile Include="Actions\AddLineAction.cpp" />
     <ClCompile Include="Actions\AddTriaAction.cpp" />
+    <ClCompile Include="Actions\ChangeBorderAction.cpp" />
     <ClCompile Include="Actions\ChangeColorAction.cpp" />
     <ClCompile Include="Actions\DeleteAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
+=======
+    <ClCompile Include="Actions\ChangeFillingAction.cpp" />
+>>>>>>> Stashed changes
+=======
+    <ClCompile Include="Actions\ChangeFillingAction.cpp" />
+>>>>>>> Stashed changes
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
