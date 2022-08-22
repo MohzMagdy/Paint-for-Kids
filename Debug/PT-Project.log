@@ -1,3 +1,6 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  SelectAction.cpp
+  CRectangle.cpp
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(101,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(102,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(87): warning C4715: 'CRectangle::WithinMe': not all control paths return a value
   PT-Project.vcxproj -> D:\cpp\N_Project\Paint-for-Kids\Debug\PT Project.exe

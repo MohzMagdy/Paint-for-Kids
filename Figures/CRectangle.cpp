@@ -16,26 +16,74 @@ void CRectangle::Draw(Output* pOut) const
 
 bool CRectangle::WithinMe(Point v, Output* pOut)
 {
-
-	double s = (Cal_Length(Corner1, Corner2) + Cal_Length(Corner1, v) + Cal_Length(Corner2, v)) / 2;
-	double A_v = pow(s * (s - Cal_Length(Corner1, Corner2)) * (s - Cal_Length(Corner1, v)) * (s - Cal_Length(Corner2, v)), 0.5);
-
-	if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && IsSelected())
+	if ((Corner1.x < Corner2.x) && (Corner1.y > Corner2.y))
 	{
-		SetSelected(false);
-		SelectCounter--;
-		return true;
+		if ((v.x < Corner2.x) && (v.x > Corner1.x) && (v.y < Corner1.y) && (v.y > Corner2.y) && IsSelected())
+		{
+			SetSelected(false);
+			SelectCounter--;
+			return true;
+		}
+		else if ((v.x < Corner2.x) && (v.x > Corner1.x) && (v.y < Corner1.y) && (v.y > Corner2.y) && !IsSelected())
+		{
+			SetSelected(true);
+			SelectCounter++;
+			return true;
+		}
+		else
+			return false;
 	}
-	else if ((A_v <= (0.5 * abs(Corner1.x - Corner2.x) * abs(Corner1.y - Corner2.y))) && !IsSelected())
+	else if ((Corner1.x > Corner2.x) && (Corner1.y > Corner2.y))
 	{
-		SetSelected(true);
-		SelectCounter++;
-		return true;
-	}                           // Here we should print the figure info as well *mendokusai -_-*
-	else
-	{
-		return false;
+		if ((v.x < Corner1.x) && (v.x > Corner2.x) && (v.y < Corner1.y) && (v.y > Corner2.y) && IsSelected())
+		{
+			SetSelected(false);
+			SelectCounter--;
+			return true;
+		}
+		else if ((v.x < Corner1.x) && (v.x > Corner2.x) && (v.y < Corner1.y) && (v.y > Corner2.y) && !IsSelected())
+		{
+			SetSelected(true);
+			SelectCounter++;
+			return true;
+		}
+		else
+			return false;
 	}
+	else if ((Corner1.x > Corner2.x) && (Corner1.y < Corner2.y))
+	{
+		if ((v.x < Corner1.x) && (v.x > Corner2.x) && (v.y > Corner1.y) && (v.y < Corner2.y) && IsSelected())
+		{
+			SetSelected(false);
+			SelectCounter--;
+			return true;
+		}
+		else if ((v.x < Corner1.x) && (v.x > Corner2.x) && (v.y > Corner1.y) && (v.y < Corner2.y) && !IsSelected())
+		{
+			SetSelected(true);
+			SelectCounter++;
+			return true;
+		}
+		else
+			return false;
+	}
+	else if ((Corner1.x < Corner2.x) && (Corner1.y < Corner2.y))
+	{
+		if ((v.x < Corner2.x) && (v.x > Corner1.x) && (v.y > Corner1.y) && (v.y < Corner2.y) && IsSelected())
+		{
+			SetSelected(false);
+			SelectCounter--;
+			return true;
+		}
+		else if ((v.x < Corner2.x) && (v.x > Corner1.x) && (v.y > Corner1.y) && (v.y < Corner2.y) && !IsSelected())
+		{
+			SetSelected(true);
+			SelectCounter++;
+			return true;
+		}
+		else
+			return false;
+	}         
 }
 
 double CRectangle::GetArea()
@@ -45,7 +93,7 @@ double CRectangle::GetArea()
 
 double CRectangle::GetPerimeter()
 {
-	return 2 * (abs((Corner1.x - Corner2.x)) + abs((Corner1.y - Corner2.y)));
+	return (2 * (abs((Corner1.x - Corner2.x)) + abs((Corner1.y - Corner2.y))));
 }
 
 string CRectangle::PrintInfo()

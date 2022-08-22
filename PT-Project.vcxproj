@@ -133,6 +133,7 @@
     <ClCompile Include="Actions\AddLineAction.cpp" />
     <ClCompile Include="Actions\AddTriaAction.cpp" />
     <ClCompile Include="Actions\ChangeColorAction.cpp" />
+    <ClCompile Include="Actions\DeleteAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Actions\AddLineAction.h" />
     <ClInclude Include="Actions\AddTriaAction.h" />
     <ClInclude Include="Actions\ChangeColorAction.h" />
+    <ClInclude Include="Actions\DeleteAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />

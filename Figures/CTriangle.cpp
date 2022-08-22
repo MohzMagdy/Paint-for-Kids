@@ -22,13 +22,13 @@ bool CTriangle::WithinMe(Point p, Output* pOut)
 	double s3 = (Cal_Length(Point2, Point3) + Cal_Length(Point2, p) + Cal_Length(Point3, p)) / 2;
 	double A3 = pow(s3 * (s3 - Cal_Length(Point2, Point3)) * (s3 - Cal_Length(Point2, p)) * (s3 - Cal_Length(Point3, p)), 0.5);
 
-	if (((A1 + A2 + A3) <= GetArea()) && IsSelected())
+	if ((((A1 + A2 + A3) <= GetArea() + 5) && ((A1 + A2 + A3) >= GetArea() - 5)) && IsSelected())
 	{
 		SetSelected(false);
 		SelectCounter--;
 		return true;
 	}
-	else if (((A1 + A2 + A3) <= GetArea()) && !IsSelected())
+	else if ((((A1 + A2 + A3) <= GetArea() + 5) && ((A1 + A2 + A3) >= GetArea() - 5)) && !IsSelected())
 	{
 		SetSelected(true);
 		SelectCounter++;

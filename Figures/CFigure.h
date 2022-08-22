@@ -34,6 +34,7 @@ public:
 	virtual double GetPerimeter() = 0;
 	virtual string PrintInfo() = 0;   
 	static int GetSelectCounter();
+	static void UpdateSelectCounter();
 
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure

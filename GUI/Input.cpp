@@ -56,7 +56,7 @@ ActionType Input::GetUserAction() const
 			case ITM_TRIA: return DRAW_TRIA;
 			case ITM_LINE: return DRAW_LINE;
 			case ITM_SELECT: return SELECT;
-			// case ITM_Change_FClr: return Change_FClr;
+			case ITM_Delete: return DEL;
 			case ITM_CLR: return CHNG_DRAW_CLR;
 			case ITM_EXIT: return EXIT;
 

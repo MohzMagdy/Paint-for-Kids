@@ -34,4 +34,9 @@ int CFigure::GetSelectCounter()
 	return SelectCounter;
 }
 
+void CFigure::UpdateSelectCounter()
+{
+	SelectCounter--;
+}
+
 

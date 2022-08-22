@@ -5,6 +5,7 @@
 #include "Actions\AddLineAction.h"
 #include "Actions\ChangeColorAction.h"
 #include "Actions\SelectAction.h"
+#include "Actions\DeleteAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -61,6 +62,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new SelectAction(this);
 			break;
 
+		case DEL:
+			pAct = new DeleteAction(this);
+			break;
+
 		case EXIT:
 			///create ExitAction here
 
@@ -89,6 +94,14 @@ void ApplicationManager::AddFigure(CFigure* pFig)
 		FigList[FigCount++] = pFig;
 }
 ////////////////////////////////////////////////////////////////////////////////////
+//Add a figure to the list of figures
+void ApplicationManager::DelFigure()
+{
+	//delete pFig;
+	FigCount--;
+}
+////////////////////////////////////////////////////////////////////////////////////
+
 CFigure *ApplicationManager::GetFigure(int x, int y) const
 {
 	//If a figure is found return a pointer to it.
