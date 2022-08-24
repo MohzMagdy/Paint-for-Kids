@@ -51,20 +51,14 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
+			case ITM_PLAY: return TO_PLAY;
 			case ITM_RECT: return DRAW_RECT;
 			case ITM_CIRC: return DRAW_CIRC;
 			case ITM_TRIA: return DRAW_TRIA;
 			case ITM_LINE: return DRAW_LINE;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 			case ITM_SELECT: return SELECT;
-			case ITM_Delete: return DEL;
-=======
+			case ITM_DELETE: return DEL;
 			case ITM_FILL: return CHNG_FILL_CLR;
->>>>>>> Stashed changes
-=======
-			case ITM_FILL: return CHNG_FILL_CLR;
->>>>>>> Stashed changes
 			case ITM_CLR: return CHNG_DRAW_CLR;
 			case ITM_BORDER: return CHNG_PEN_SIZE;
 			case ITM_EXIT: return EXIT;
@@ -84,10 +78,18 @@ ActionType Input::GetUserAction() const
 		break;
 
 	case MODE_PLAY: //GUI is in PLAY mode
-		///TODO:
-		//perform checks similar to Draw mode checks above
-		//and return the correspoding action
-		return TO_PLAY;	//just for now. This should be updated
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			int ClickedItemOrder = (x / UI.MenuItemWidth);
+
+			switch (ClickedItemOrder)
+			{
+			case PLY_DRAW: return TO_DRAW;
+			case PLY_EXIT: return EXIT;
+
+			default: return EMPTY;
+			}
+		}
 		break;
 
 	case MODE_CLR: //GUI is in COLOR switch mode

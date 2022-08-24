@@ -18,10 +18,15 @@ bool CFigure::IsSelected() const
 void CFigure::ChngDrawClr(color Dclr)
 {	FigGfxInfo.DrawClr = Dclr; }
 
-void CFigure::ChngFillClr(color Fclr)
+void CFigure::ChngFillClr(color Fclr, bool style)
 {	
-	FigGfxInfo.isFilled = true;
+	FigGfxInfo.isFilled = style;
 	FigGfxInfo.FillClr = Fclr; 
+}
+
+void CFigure::ChngBorderWidth(int width)
+{
+	FigGfxInfo.BorderWdth = width;
 }
 
 double CFigure::Cal_Length(Point p1, Point p2)

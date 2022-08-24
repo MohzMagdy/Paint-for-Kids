@@ -19,20 +19,42 @@ void ChangeBorderAction::ReadActionParameters()
 
 	ActionType BorderType = pIn->GetUserAction();
 
+	int newPenWidth;
+
 	switch (BorderType)
 	{
 	case SET_PEN_3PT:
-		UI.PenWidth = 3;
+		newPenWidth = 3;
 		break;
 	case SET_PEN_5PT:
-		UI.PenWidth = 5;
+		newPenWidth = 5;
 		break;
 	case SET_PEN_7PT:
-		UI.PenWidth = 7;
+		newPenWidth = 7;
 		break;
 	case SET_PEN_10PT:
-		UI.PenWidth = 10;
+		newPenWidth = 10;
 		break;
+	}
+
+	if (pManager->FigList[0]->GetSelectCounter() != 0) //Items are selected
+	{
+		for (int i = 0; i < (pManager->get_FigCount()); i++)
+		{
+			if ((pManager->FigList[i])->IsSelected())
+			{
+				pManager->FigList[i]->ChngBorderWidth(newPenWidth);
+				pManager->FigList[i]->SetSelected(false);
+				pManager->FigList[i]->UpdateSelectCounter();
+			}
+		}
+
+		pOut->ClearDrawArea();
+		pManager->UpdateInterface();
+	}
+	else //Change for new objects
+	{
+		UI.PenWidth= newPenWidth;
 	}
 
 	UI.InterfaceMode = UI.PrevInterfaceMode;

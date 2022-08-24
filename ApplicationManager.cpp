@@ -4,18 +4,12 @@
 #include "Actions\AddTriaAction.h"
 #include "Actions\AddLineAction.h"
 #include "Actions\ChangeColorAction.h"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 #include "Actions\SelectAction.h"
 #include "Actions\DeleteAction.h"
-=======
 #include "Actions\ChangeFillingAction.h"
 #include "Actions\ChangeBorderAction.h"
->>>>>>> Stashed changes
-=======
 #include "Actions\ChangeFillingAction.h"
 #include "Actions\ChangeBorderAction.h"
->>>>>>> Stashed changes
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -48,6 +42,16 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	//According to Action Type, create the corresponding action object
 	switch (ActType)
 	{
+		case TO_PLAY:
+			pOut->CreatePlayToolBar();
+			pOut->PrintMessage("You are in Play mode!");
+			break;
+
+		case TO_DRAW:
+			pOut->CreateDrawToolBar();
+			pOut->PrintMessage("You are in Draw mode!");
+			break;
+
 		case DRAW_RECT:
 			pAct = new AddRectAction(this);
 			break;
@@ -68,27 +72,20 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new ChangeColorAction(this);
 			break;
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		case SELECT:
 			pAct = new SelectAction(this);
 			break;
 
 		case DEL:
 			pAct = new DeleteAction(this);
-=======
-=======
->>>>>>> Stashed changes
+			break;
+
 		case CHNG_FILL_CLR:
 			pAct = new ChangeFillingAction(this);
 			break;
 
 		case CHNG_PEN_SIZE:
 			pAct = new ChangeBorderAction(this);
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 			break;
 
 		case EXIT:

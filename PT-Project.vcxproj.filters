@@ -39,6 +39,9 @@
     <ClCompile Include="CMUgraphicsLib\mousequeue.cpp">
       <Filter>CMUgraphicsLib</Filter>
     </ClCompile>
+    <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
+      <Filter>CMUgraphicsLib</Filter>
+    </ClCompile>
     <ClCompile Include="CMUgraphicsLib\jpeg\jcomapi.c">
       <Filter>CMUgraphicsLib\JPEG</Filter>
     </ClCompile>
@@ -145,45 +148,35 @@
     <ClCompile Include="Actions\AddCircAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Figures\CCircle.cpp">
-      <Filter>Figures Classes</Filter>
+    <ClCompile Include="Actions\AddLineAction.cpp">
+      <Filter>Action Classes</Filter>
     </ClCompile>
     <ClCompile Include="Actions\AddTriaAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Figures\CTriangle.cpp">
-      <Filter>Figures Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
-      <Filter>CMUgraphicsLib</Filter>
-    </ClCompile>
-    <ClCompile Include="Actions\AddLineAction.cpp">
+    <ClCompile Include="Actions\ChangeBorderAction.cpp">
       <Filter>Action Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="Figures\CLine.cpp">
-      <Filter>Figures Classes</Filter>
     </ClCompile>
     <ClCompile Include="Actions\ChangeColorAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <ClCompile Include="Actions\SelectAction.cpp">
-      <Filter>Action Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="Actions\DeleteAction.cpp">
-=======
-=======
->>>>>>> Stashed changes
     <ClCompile Include="Actions\ChangeFillingAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Actions\ChangeBorderAction.cpp">
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    <ClCompile Include="Actions\DeleteAction.cpp">
       <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\SelectAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Figures\CCircle.cpp">
+      <Filter>Figures Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Figures\CLine.cpp">
+      <Filter>Figures Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Figures\CTriangle.cpp">
+      <Filter>Figures Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +243,9 @@
     <ClInclude Include="Figures\CFigure.h">
       <Filter>Figures Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Figures\CRectangle.h">
+      <Filter>Figures Classes</Filter>
+    </ClInclude>
     <ClInclude Include="Actions\Action.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
@@ -272,45 +268,35 @@
     <ClInclude Include="Actions\AddCircAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\CCircle.h">
-      <Filter>Figures Classes</Filter>
+    <ClInclude Include="Actions\AddLineAction.h">
+      <Filter>Action Classes</Filter>
     </ClInclude>
     <ClInclude Include="Actions\AddTriaAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\CTriangle.h">
-      <Filter>Figures Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Figures\CRectangle.h">
-      <Filter>Figures Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Actions\AddLineAction.h">
+    <ClInclude Include="Actions\ChangeBorderAction.h">
       <Filter>Action Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Figures\CLine.h">
-      <Filter>Figures Classes</Filter>
     </ClInclude>
     <ClInclude Include="Actions\ChangeColorAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <ClInclude Include="Actions\SelectAction.h">
-      <Filter>Action Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Actions\DeleteAction.h">
-=======
-=======
->>>>>>> Stashed changes
     <ClInclude Include="Actions\ChangeFillingAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Actions\ChangeBorderAction.h">
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    <ClInclude Include="Actions\DeleteAction.h">
       <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\SelectAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\CCircle.h">
+      <Filter>Figures Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\CLine.h">
+      <Filter>Figures Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Figures\CTriangle.h">
+      <Filter>Figures Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

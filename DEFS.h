@@ -13,16 +13,9 @@ enum ActionType //The actions supported (you can add more if needed)
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 	SELECT,
-=======
-	CHNG_PEN_SIZE,
->>>>>>> Stashed changes
-=======
-	CHNG_PEN_SIZE,
->>>>>>> Stashed changes
 	DEL,			//Delete a figure(s)
+	CHNG_PEN_SIZE,
 	MOVE,			//Move a figure(s)
 	RESIZE,			//Resize a figure(s)
 	ROTATE,			//Rotate a figure(s)

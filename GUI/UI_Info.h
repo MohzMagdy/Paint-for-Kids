@@ -19,12 +19,13 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 {
 	//Note: Items are ordered here as they appear in menu
 	//If you want to change the menu items order, change the order here
+	ITM_PLAY,
 	ITM_RECT,		//Recangle item in menu
 	ITM_CIRC,		//Circle item in menu
 	ITM_TRIA,      //Triangle item in menu
 	ITM_LINE,
 	ITM_SELECT,
-	ITM_Delete,
+	ITM_DELETE,
 	// ITM_Change_FClr,
 	//TODO: Add more items names here
 
@@ -64,6 +65,8 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	//If you want to change the menu items order, change the order here
 	
 	//TODO: Add more items names here
+	PLY_DRAW,
+	PLY_EXIT,
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	

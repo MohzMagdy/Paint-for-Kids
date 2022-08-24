@@ -13,12 +13,11 @@
   <PropertyGroup Label="Globals">
     <ProjectName>PT Project</ProjectName>
     <ProjectGuid>{1AC3DDD7-FDDE-487E-A2A4-52A8FCF7BDB9}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -134,10 +133,9 @@
     <ClCompile Include="Actions\AddTriaAction.cpp" />
     <ClCompile Include="Actions\ChangeBorderAction.cpp" />
     <ClCompile Include="Actions\ChangeColorAction.cpp" />
+    <ClCompile Include="Actions\ChangeFillingAction.cpp" />
     <ClCompile Include="Actions\DeleteAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
-    <ClCompile Include="Actions\ChangeFillingAction.cpp" />
-    <ClCompile Include="Actions\ChangeFillingAction.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -188,7 +186,9 @@
     <ClInclude Include="Actions\AddCircAction.h" />
     <ClInclude Include="Actions\AddLineAction.h" />
     <ClInclude Include="Actions\AddTriaAction.h" />
+    <ClInclude Include="Actions\ChangeBorderAction.h" />
     <ClInclude Include="Actions\ChangeColorAction.h" />
+    <ClInclude Include="Actions\ChangeFillingAction.h" />
     <ClInclude Include="Actions\DeleteAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />

@@ -26,7 +26,8 @@ public:
 	virtual void Draw(Output* pOut) const  = 0 ;		//Draw the figure
 	
 	void ChngDrawClr(color Dclr);	//changes the figure's drawing color
-	void ChngFillClr(color Fclr);	//changes the figure's filling color
+	void ChngFillClr(color Fclr, bool style);	//changes the figure's filling color
+	void CFigure::ChngBorderWidth(int width);
 
 	virtual bool WithinMe(Point c1, Output* pOut) = 0;
 	double Cal_Length(Point p1, Point P2);

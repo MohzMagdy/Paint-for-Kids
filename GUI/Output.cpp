@@ -18,10 +18,10 @@ Output::Output()
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
-	UI.MsgColor = RED;		//Messages color
-	UI.BkGrndColor = LIGHTGOLDENRODYELLOW;	//Background color
+	UI.MsgColor = WHITE;		//Messages color
+	UI.BkGrndColor = LIGHTGREY;	//Background color
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
-	UI.StatusBarColor = TURQUOISE;
+	UI.StatusBarColor = LIGHTSLATEGREY;
 	UI.PenWidth = 3;	//width of the figures frames
 
 
@@ -81,23 +81,16 @@ void Output::CreateDrawToolBar() const
 	//To control the order of these images in the menu,
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
+	MenuItemImages[ITM_PLAY] = "images\\MenuItems\\Menu_Play.jpg";
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
 	MenuItemImages[ITM_CIRC] = "images\\MenuItems\\Menu_Circ.jpg";
 	MenuItemImages[ITM_TRIA] = "images\\MenuItems\\Menu_Tria.jpg";
 	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_line.jpg";
 	MenuItemImages[ITM_CLR] = "images\\MenuItems\\Menu_Color.png";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-	//MenuItemImages[ITM_Change_FClr] = "images\\MenuItems\\Change_Clr.jpg";
-	MenuItemImages[ITM_SELECT] = "images\\MenuItems\\Menu_Tria.jpg";
-	MenuItemImages[ITM_Delete] = "images\\MenuItems\\Menu_Tria.jpg";
-=======
-
->>>>>>> Stashed changes
-=======
+	MenuItemImages[ITM_SELECT] = "images\\MenuItems\\Menu_Select.jpg";
+	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\Menu_Delete.jpg";
 	MenuItemImages[ITM_FILL] = "images\\MenuItems\\Menu_Filling.jpg";
 	MenuItemImages[ITM_BORDER] = "images\\MenuItems\\Menu_Border.jpg";
->>>>>>> Stashed changes
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -167,7 +160,20 @@ void Output::CreatePenToolBar() const
 void Output::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
-	///TODO: write code to create Play mode menu
+	ClearToolBar();
+
+	//Play mode items
+	string MenuItemImages[PLAY_ITM_COUNT];
+	MenuItemImages[PLY_DRAW] = "images\\MenuItems\\Menu_Play.jpg";
+	MenuItemImages[PLY_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+
+	for (int i = 0; i < PLAY_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+
+	//Draw a line under the toolbar
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
