@@ -13,6 +13,7 @@ class ApplicationManager
 
 private:
 	int FigCount;		//Actual number of figures
+	int CopyCounter;
 	
 
 	//Pointers to Input and Output classes
@@ -40,7 +41,10 @@ public:
 
 	int get_FigCount();         //These will be used whenever we need to iterate on the figures
 	CFigure* P_FigList();
-	CFigure* FigList[MaxFigCount];	//List of all figures (Array of pointers)
+	CFigure* FigList[MaxFigCount];	 //List of all figures (Array of pointers)
+
+	CFigure* Copied[200];
+	void NewCopy(CFigure* fig);
 };
 
 #endif

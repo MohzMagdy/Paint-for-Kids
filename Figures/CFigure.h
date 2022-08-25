@@ -19,6 +19,7 @@ protected:
 
 public:
 	static int SelectCounter;
+	CFigure();
 	CFigure(GfxInfo FigureGfxInfo);
 	void SetSelected(bool s);	//select/unselect the figure
 	bool IsSelected() const;	//check whether fig is selected
@@ -36,6 +37,7 @@ public:
 	virtual string PrintInfo() = 0;   
 	static int GetSelectCounter();
 	static void UpdateSelectCounter();
+	virtual CFigure* CopyInfo(CFigure*) = 0;
 
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure

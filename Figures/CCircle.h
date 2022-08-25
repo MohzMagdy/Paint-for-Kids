@@ -10,12 +10,14 @@ private:
 	Point edgePoint;
 	double radius;
 public:
+	CCircle();
 	CCircle(Point, Point, GfxInfo FigureGfxInfo);
 	virtual void Draw(Output* pOut) const;
 	virtual bool WithinMe(Point, Output* pOut);
 	virtual double GetArea();
 	virtual double GetPerimeter();
 	virtual string PrintInfo();
+	virtual CFigure* CopyInfo(CFigure*);
 
 };
 

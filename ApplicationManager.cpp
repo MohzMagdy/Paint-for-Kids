@@ -10,6 +10,7 @@
 #include "Actions\ChangeBorderAction.h"
 #include "Actions\ChangeFillingAction.h"
 #include "Actions\ChangeBorderAction.h"
+#include "Actions\CopyAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -19,10 +20,16 @@ ApplicationManager::ApplicationManager()
 	pIn = pOut->CreateInput();
 
 	FigCount = 0;
+	CopyCounter = 0;
 
 	//Create an array of figure pointers and set them to NULL
-	for(int i=0; i<MaxFigCount; i++)
+	for (int i = 0; i < MaxFigCount; i++)
+	{
 		FigList[i] = NULL;
+		Copied[i] = NULL;
+	}
+		
+		
 }
 
 //==================================================================================//
@@ -86,6 +93,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case CHNG_PEN_SIZE:
 			pAct = new ChangeBorderAction(this);
+			break;
+
+		case COPY:
+			pAct = new CopyAction(this);
 			break;
 
 		case EXIT:
@@ -160,6 +171,20 @@ int ApplicationManager::get_FigCount()
 
 CFigure* ApplicationManager::P_FigList() 
 { return FigList[0];  }
+
+////////////////////////////////////////////////////////////////////////////////////
+
+void ApplicationManager::NewCopy(CFigure* fig)
+{
+	Copied[CopyCounter] = fig;
+	CopyCounter++;
+}
+/////////////////
+//int ApplicationManager::gettNumofCopied_Figurelist()
+//{
+//	return CopyCounter;
+//}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////

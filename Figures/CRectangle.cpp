@@ -1,5 +1,7 @@
 #include "CRectangle.h"
 
+CRectangle::CRectangle()
+{}
 
 CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(FigureGfxInfo)
 {
@@ -101,4 +103,11 @@ string CRectangle::PrintInfo()
 	float w = abs(Corner1.x - Corner2.x);
 	float l = abs(Corner1.y - Corner2.y);
 	return "Rectangle: Width = " + to_string(w) + ", Length = " + to_string(l) + ", Area = " + to_string(float(GetArea())) + ", Perimeter = " + to_string(float(GetPerimeter()));
+}
+
+CFigure* CRectangle::CopyInfo(CFigure* p)
+{
+	CRectangle* c = new CRectangle;
+	c->FigGfxInfo = FigGfxInfo;
+	return c;
 }

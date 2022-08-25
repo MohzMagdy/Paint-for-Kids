@@ -1,5 +1,10 @@
 #include "CCircle.h"
 
+CCircle::CCircle()
+{
+
+}
+
 CCircle::CCircle(Point center, Point edge, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
 	centerPoint = center;
@@ -43,4 +48,11 @@ double CCircle::GetPerimeter()
 string CCircle::PrintInfo()
 {
 	return "Circle: center = (" + to_string(centerPoint.x) + ", " + to_string(centerPoint.y) + "), radius = " + to_string(radius) + ", Area = " + to_string(GetArea()) + ", Perimeter = " + to_string(GetPerimeter());
+}
+
+CFigure* CCircle::CopyInfo(CFigure* p)
+{
+	CCircle* c = new CCircle;
+	c->FigGfxInfo = FigGfxInfo;
+	return c;
 }

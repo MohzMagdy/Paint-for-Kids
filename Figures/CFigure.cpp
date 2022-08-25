@@ -1,5 +1,9 @@
 #include "CFigure.h"
 
+CFigure::CFigure()
+{
+
+}
 
 CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
@@ -43,5 +47,6 @@ void CFigure::UpdateSelectCounter()
 {
 	SelectCounter--;
 }
+
 
 

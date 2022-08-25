@@ -1,6 +1,7 @@
 #include "CLine.h"
 
-
+CLine::CLine()
+{}
 
 CLine::CLine(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -55,4 +56,11 @@ double CLine::GetPerimeter()
 string CLine::PrintInfo()
 {
 	return "Line: length = " + to_string(length) + ", starts from(" + to_string(Point1.x) + ", " + to_string(Point1.y) + "), to(" + to_string(Point2.x) + ", " + to_string(Point2.y) + ")" ;
+}
+
+CFigure* CLine::CopyInfo(CFigure* p)
+{
+	CLine* c = new CLine;
+	c->FigGfxInfo = FigGfxInfo;
+	return c;
 }

@@ -1,5 +1,9 @@
 #include "CTriangle.h"
 
+CTriangle::CTriangle()
+{
+}
+
 CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
 	Point1 = P1;
@@ -55,4 +59,11 @@ double CTriangle::GetPerimeter()
 string CTriangle::PrintInfo()
 {
 	return "Triangle: area = " + to_string(GetArea()) + ", Perimeter = " + to_string(GetPerimeter());
+}
+
+CFigure* CTriangle::CopyInfo(CFigure* p)
+{
+	CTriangle* c = new CTriangle;
+	c->FigGfxInfo = FigGfxInfo;
+	return c;
 }
