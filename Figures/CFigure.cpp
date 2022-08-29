@@ -48,5 +48,25 @@ void CFigure::UpdateSelectCounter()
 	SelectCounter--;
 }
 
+Point CFigure::Closer(Point p1, Point p2)
+{
+	Point start;
+	if (p1.x < p2.x)
+		start.x = p1.x;
+	else
+		start.x = p2.x;
+
+	if (p1.y < p2.y)
+		start.y = p1.y;
+	else
+		start.y = p2.y;
+
+	return start;
+}
+
+GfxInfo CFigure::Get_Gfx()
+{
+	return FigGfxInfo;
+}
 
 

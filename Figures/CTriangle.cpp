@@ -63,7 +63,38 @@ string CTriangle::PrintInfo()
 
 CFigure* CTriangle::CopyInfo(CFigure* p)
 {
-	CTriangle* c = new CTriangle;
-	c->FigGfxInfo = FigGfxInfo;
+	CTriangle* c = new CTriangle(*(p->GetPoints()), *(p->GetPoints() + 1), *(p->GetPoints() + 2),  p->Get_Gfx());
 	return c;
 }
+
+Point CTriangle::LocateStart()
+{
+	return Closer(Closer(Point1, Point2), Point3);
+}
+
+void CTriangle::SetPoints(Point p1, Point p2, Point p3)
+{
+	Point1 = p1;
+	Point3 = p2;
+	Point3 = p3;
+
+}
+
+Point* CTriangle::GetPoints()
+{
+	Point points[] = { Point1, Point2, Point3};
+	return points;
+}
+
+void CTriangle::CalDiff(Point v1, Point ref, CFigure* pfig)
+{
+	Point p1, p2, p3;
+	p1.x = v1.x + (*(pfig->GetPoints())).x - ref.x;
+	p1.y = v1.y + (*(pfig->GetPoints())).y - ref.y;
+	p2.x = v1.x + (*(pfig->GetPoints() + 1)).x - ref.x;
+	p2.y = v1.y + (*(pfig->GetPoints() + 1)).y - ref.y;
+	p3.x = v1.x + (*(pfig->GetPoints() + 2)).x - ref.x;
+	p3.y = v1.y + (*(pfig->GetPoints() + 2)).y - ref.y;
+	pfig->SetPoints(p1, p2, p3);
+}
+

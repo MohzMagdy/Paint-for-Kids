@@ -1,16 +1,5 @@
 #include "ApplicationManager.h"
-#include "Actions\AddRectAction.h"
-#include "Actions\AddCircAction.h"
-#include "Actions\AddTriaAction.h"
-#include "Actions\AddLineAction.h"
-#include "Actions\ChangeColorAction.h"
-#include "Actions\SelectAction.h"
-#include "Actions\DeleteAction.h"
-#include "Actions\ChangeFillingAction.h"
-#include "Actions\ChangeBorderAction.h"
-#include "Actions\ChangeFillingAction.h"
-#include "Actions\ChangeBorderAction.h"
-#include "Actions\CopyAction.h"
+
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -27,6 +16,7 @@ ApplicationManager::ApplicationManager()
 	{
 		FigList[i] = NULL;
 		Copied[i] = NULL;
+		Selected[i] = NULL;
 	}
 		
 		
@@ -97,6 +87,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case COPY:
 			pAct = new CopyAction(this);
+			break;
+
+		case PASTE:
+			pAct = new PasteAction(this);
 			break;
 
 		case EXIT:
@@ -180,12 +174,10 @@ void ApplicationManager::NewCopy(CFigure* fig)
 	CopyCounter++;
 }
 /////////////////
-//int ApplicationManager::gettNumofCopied_Figurelist()
-//{
-//	return CopyCounter;
-//}
-
-
+int ApplicationManager::GetCopyCounter()
+{
+	return CopyCounter;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 //Destructor

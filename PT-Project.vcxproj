@@ -137,6 +137,7 @@
     <ClCompile Include="Actions\ChangeFillingAction.cpp" />
     <ClCompile Include="Actions\CopyAction.cpp" />
     <ClCompile Include="Actions\DeleteAction.cpp" />
+    <ClCompile Include="Actions\PasteAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="Actions\ChangeFillingAction.h" />
     <ClInclude Include="Actions\CopyAction.h" />
     <ClInclude Include="Actions\DeleteAction.h" />
+    <ClInclude Include="Actions\PasteAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />

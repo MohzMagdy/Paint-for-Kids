@@ -62,6 +62,7 @@ ActionType Input::GetUserAction() const
 			case ITM_CLR: return CHNG_DRAW_CLR;
 			case ITM_BORDER: return CHNG_PEN_SIZE;
 			case ITM_COPY: return COPY;
+			case ITM_PASTE: return PASTE;
 			case ITM_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar

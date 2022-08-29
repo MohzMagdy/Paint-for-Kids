@@ -24,6 +24,8 @@ bool CRectangle::WithinMe(Point v, Output* pOut)
 		{
 			SetSelected(false);
 			SelectCounter--;
+			start.x = Corner1.x;
+			start.y = Corner2.y;
 			return true;
 		}
 		else if ((v.x < Corner2.x) && (v.x > Corner1.x) && (v.y < Corner1.y) && (v.y > Corner2.y) && !IsSelected())
@@ -41,6 +43,8 @@ bool CRectangle::WithinMe(Point v, Output* pOut)
 		{
 			SetSelected(false);
 			SelectCounter--;
+			start.x = Corner2.x;
+			start.y = Corner2.y;
 			return true;
 		}
 		else if ((v.x < Corner1.x) && (v.x > Corner2.x) && (v.y < Corner1.y) && (v.y > Corner2.y) && !IsSelected())
@@ -58,6 +62,8 @@ bool CRectangle::WithinMe(Point v, Output* pOut)
 		{
 			SetSelected(false);
 			SelectCounter--;
+			start.x = Corner2.x;
+			start.y = Corner1.y;
 			return true;
 		}
 		else if ((v.x < Corner1.x) && (v.x > Corner2.x) && (v.y > Corner1.y) && (v.y < Corner2.y) && !IsSelected())
@@ -75,6 +81,8 @@ bool CRectangle::WithinMe(Point v, Output* pOut)
 		{
 			SetSelected(false);
 			SelectCounter--;
+			start.x = Corner1.x;
+			start.y = Corner1.y;
 			return true;
 		}
 		else if ((v.x < Corner2.x) && (v.x > Corner1.x) && (v.y > Corner1.y) && (v.y < Corner2.y) && !IsSelected())
@@ -107,7 +115,33 @@ string CRectangle::PrintInfo()
 
 CFigure* CRectangle::CopyInfo(CFigure* p)
 {
-	CRectangle* c = new CRectangle;
-	c->FigGfxInfo = FigGfxInfo;
+	CRectangle* c = new CRectangle(*(p->GetPoints()), *(p->GetPoints() + 1), p->Get_Gfx());
 	return c;
+}
+
+Point CRectangle::LocateStart()
+{
+	return start;
+}
+
+void CRectangle::SetPoints(Point p1, Point p2, Point p3)
+{
+	Corner1 = p1;
+	Corner2 = p2;
+}
+
+Point* CRectangle::GetPoints()
+{
+	Point points[] = { Corner1, Corner2 };
+	return points;
+}
+
+void CRectangle::CalDiff(Point v1, Point ref, CFigure* pfig)
+{
+	Point p1, p2;
+	p1.x = v1.x + (*(pfig->GetPoints())).x - ref.x;
+	p1.y = v1.y + (*(pfig->GetPoints())).y - ref.y;
+	p2.x = v1.x + (*(pfig->GetPoints() + 1)).x - ref.x;
+	p2.y = v1.y + (*(pfig->GetPoints() + 1)).y - ref.y;
+	pfig->SetPoints(p1, p2, { 0, 0 });
 }

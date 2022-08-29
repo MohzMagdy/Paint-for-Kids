@@ -17,21 +17,17 @@ void CopyAction::ReadActionParameters()
 	pOut->PrintMessage("Copy the wanted figure");
 
 
-	for (int i = 0; i < (pManager->get_FigCount()); i++)
+	for (int i = 0; i < (pManager->Selected[i]->GetSelectCounter()); i++)
 	{
-		if ((pManager->FigList[i])->IsSelected())
-		{
-			CFigure* p = NULL;
-			p = pManager->FigList[i]->CopyInfo(pManager->FigList[i]);
-			pManager->FigList[i]->SetSelected(false);
-			pManager->FigList[i]->Draw(pOut);
-			pManager->NewCopy(p);
+		CFigure* p = pManager->FigList[i]->CopyInfo(pManager->FigList[i]);
+		pManager->Selected[i]->SetSelected(false);
+		pManager->FigList[i]->Draw(pOut);
+		pManager->NewCopy(p);
 			for (int i = 0; i < pManager->get_FigCount(); i++) {
 				if (pManager->Copied[i] != NULL) {
 					pOut->PrintMessage("Copy Action : Figure has been copied");
 				}
 			}
-		}
 	}
 }
 
