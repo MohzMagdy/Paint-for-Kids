@@ -18,6 +18,8 @@
 #include "Actions\ChangeBorderAction.h"
 #include "Actions\CopyAction.h"
 #include "Actions\PasteAction.h"
+#include "Actions\CutAction.h"
+
 
 //Main class that manages everything in the application.
 class ApplicationManager
@@ -58,9 +60,10 @@ public:
 
 	CFigure* Selected[MaxFigCount];
 
-	CFigure* Copied[100];
+	CFigure* Copied[200];
 	int GetCopyCounter();
 	void NewCopy(CFigure* fig);
+	void ClearCopyList();
 };
 
 #endif

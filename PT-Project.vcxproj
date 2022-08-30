@@ -136,6 +136,7 @@
     <ClCompile Include="Actions\ChangeColorAction.cpp" />
     <ClCompile Include="Actions\ChangeFillingAction.cpp" />
     <ClCompile Include="Actions\CopyAction.cpp" />
+    <ClCompile Include="Actions\CutAction.cpp" />
     <ClCompile Include="Actions\DeleteAction.cpp" />
     <ClCompile Include="Actions\PasteAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant1.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant2.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
+    <ClCompile Include="CutAction.cpp" />
     <ClCompile Include="Figures\CCircle.cpp" />
     <ClCompile Include="Figures\CFigure.cpp" />
     <ClCompile Include="Figures\CLine.cpp" />
@@ -193,6 +195,7 @@
     <ClInclude Include="Actions\ChangeColorAction.h" />
     <ClInclude Include="Actions\ChangeFillingAction.h" />
     <ClInclude Include="Actions\CopyAction.h" />
+    <ClInclude Include="Actions\CutAction.h" />
     <ClInclude Include="Actions\DeleteAction.h" />
     <ClInclude Include="Actions\PasteAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />
@@ -216,6 +219,7 @@
     <ClInclude Include="CMUgraphicsLib\jpeg\jpegint.h" />
     <ClInclude Include="CMUgraphicsLib\jpeg\jpeglib.h" />
     <ClInclude Include="CMUgraphicsLib\jpeg\jversion.h" />
+    <ClInclude Include="CutAction.h" />
     <ClInclude Include="Figures\CCircle.h" />
     <ClInclude Include="Figures\CFigure.h" />
     <ClInclude Include="Figures\CLine.h" />

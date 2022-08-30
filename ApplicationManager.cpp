@@ -93,6 +93,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new PasteAction(this);
 			break;
 
+		case CUT:
+			pAct = new CopyAction(this);
+			pAct = new DeleteAction(this);
+			break;
+
 		case EXIT:
 			///create ExitAction here
 
@@ -170,13 +175,20 @@ CFigure* ApplicationManager::P_FigList()
 
 void ApplicationManager::NewCopy(CFigure* fig)
 {
-	Copied[CopyCounter] = fig;
-	CopyCounter++;
+	Copied[CopyCounter++] = fig;
 }
 /////////////////
 int ApplicationManager::GetCopyCounter()
 {
 	return CopyCounter;
+}
+
+void ApplicationManager::ClearCopyList()
+{
+	for (int i = 0; i < CopyCounter; i++)
+		Copied[i] = NULL;
+
+	CopyCounter = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////

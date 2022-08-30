@@ -25,13 +25,13 @@ void ChangeColorAction::ReadActionParameters()
 	switch (ColorType)
 	{
 	case SET_CLR_RED:
-		newDrawColor = RED;
+		newDrawColor = MyRed;
 		break;
 	case SET_CLR_GREEN:
-		newDrawColor = GREEN;
+		newDrawColor = MyGreen;
 		break;
 	case SET_CLR_BLUE:
-		newDrawColor = BLUE;
+		newDrawColor = MyBlue;
 		break;
 	default:
 		colorPicked = false;

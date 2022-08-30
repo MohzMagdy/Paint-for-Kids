@@ -45,7 +45,7 @@ int CFigure::GetSelectCounter()
 
 void CFigure::UpdateSelectCounter()
 {
-	SelectCounter--;
+	SelectCounter -= 1;
 }
 
 Point CFigure::Closer(Point p1, Point p2)

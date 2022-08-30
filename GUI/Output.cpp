@@ -14,13 +14,13 @@ Output::Output()
 
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 80;
+	UI.MenuItemWidth = 70;
 
-	UI.DrawColor = BLUE;	//Drawing color
-	UI.FillColor = GREEN;	//Filling color
+	UI.DrawColor = MyBlue;	//Drawing color
+	UI.FillColor = MyBlue;	//Filling color
 	UI.MsgColor = WHITE;		//Messages color
 	UI.BkGrndColor = LIGHTGREY;	//Background color
-	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
+	UI.HighlightColor = MyHighlight;	//This color should NOT be used to draw figures. use if for highlight only
 	UI.StatusBarColor = LIGHTSLATEGREY;
 	UI.PenWidth = 3;	//width of the figures frames
 
@@ -82,17 +82,18 @@ void Output::CreateDrawToolBar() const
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_PLAY] = "images\\MenuItems\\Menu_Play.jpg";
-	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
-	MenuItemImages[ITM_CIRC] = "images\\MenuItems\\Menu_Circ.jpg";
+	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rectangle.jpg";
+	MenuItemImages[ITM_CIRC] = "images\\MenuItems\\Menu_Circle.jpg";
 	MenuItemImages[ITM_TRIA] = "images\\MenuItems\\Menu_Tria.jpg";
 	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_line.jpg";
-	MenuItemImages[ITM_CLR] = "images\\MenuItems\\Menu_Color.png";
+	MenuItemImages[ITM_CLR] = "images\\MenuItems\\Menu_BorderColor.jpg";
 	MenuItemImages[ITM_SELECT] = "images\\MenuItems\\Menu_Select.jpg";
 	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\Menu_Delete.jpg";
 	MenuItemImages[ITM_FILL] = "images\\MenuItems\\Menu_Filling.jpg";
-	MenuItemImages[ITM_BORDER] = "images\\MenuItems\\Menu_Border.jpg";
-	MenuItemImages[ITM_COPY] = "images\\MenuItems\\Menu_Select.jpg";
-	MenuItemImages[ITM_PASTE] = "images\\MenuItems\\Menu_Select.jpg";
+	MenuItemImages[ITM_BORDER] = "images\\MenuItems\\Menu_Width.jpg";
+	MenuItemImages[ITM_CUT] = "images\\MenuItems\\Menu_Cut.jpg";
+	MenuItemImages[ITM_COPY] = "images\\MenuItems\\Menu_Copy.jpg";
+	MenuItemImages[ITM_PASTE] = "images\\MenuItems\\Menu_Paste.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -104,7 +105,7 @@ void Output::CreateDrawToolBar() const
 
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(MyLine, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 }
@@ -125,15 +126,15 @@ void Output::CreateColorToolBar() const
 	ClearToolBar();
 
 	string MenuItemImages[DRAW_CLR_COUNT];
-	MenuItemImages[CLR_RED] = "images\\ColorItems\\Color_Red.jpg";
-	MenuItemImages[CLR_GREEN] = "images\\ColorItems\\Color_Green.jpg";
-	MenuItemImages[CLR_BLUE] = "images\\ColorItems\\Color_Blue.jpg";
+	MenuItemImages[CLR_RED] = "images\\ColorItems\\MyRed.jpg";
+	MenuItemImages[CLR_GREEN] = "images\\ColorItems\\MyGreen.jpg";
+	MenuItemImages[CLR_BLUE] = "images\\ColorItems\\MyBlue.jpg";
 	MenuItemImages[CLR_NONE] = "images\\ColorItems\\Color_None.jpg";
 
 	for (int i = 0; i < DRAW_CLR_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
-	pWind->SetPen(RED, 3);
+	pWind->SetPen(MyLine, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 

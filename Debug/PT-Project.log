@@ -1,32 +1,6 @@
-﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  CCircle.cpp
-D:\cpp\N_Project\Paint-for-Kids\Figures\CCircle.cpp(61,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\cpp\N_Project\Paint-for-Kids\Figures\CCircle.cpp(62,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  DeleteAction.cpp
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.h(7,20): error C2011: 'DeleteAction': 'class' type redefinition
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.h(7): message : see declaration of 'DeleteAction'
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(4,15): error C2027: use of undefined type 'DeleteAction'
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.h(7): message : see declaration of 'DeleteAction'
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(4,54): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(5,1): error C2550: '{ctor}': constructor initializer lists are only allowed on constructor definitions
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(6,1): warning C4508: '{ctor}': function should return a value; 'void' return type assumed
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(8,20): error C2027: use of undefined type 'DeleteAction'
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.h(7): message : see declaration of 'DeleteAction'
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(10,17): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(12,23): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(14,8): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(16,11): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(17,4): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(18,32): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(18,70): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(20,5): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(20,32): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(23,11): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(23,29): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(24,4): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(26,4): error C2065: 'pManager': undeclared identifier
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.cpp(31,20): error C2027: use of undefined type 'DeleteAction'
-D:\cpp\N_Project\Paint-for-Kids\Actions\DeleteAction.h(7): message : see declaration of 'DeleteAction'
-  CopyAction.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1091,5): warning MSB8027: Two or more files with the name of CutAction.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Actions\CutAction.cpp, CutAction.cpp.
+cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  CutAction.cpp
+c1xx : fatal error C1083: Cannot open source file: 'CutAction.cpp': No such file or directory
+  CutAction.cpp
   Generating Code...
-D:\cpp\N_Project\Paint-for-Kids\Figures\CCircle.cpp(85): warning C4172: returning address of local variable or temporary: points

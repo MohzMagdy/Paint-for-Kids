@@ -18,6 +18,7 @@ enum ActionType //The actions supported (you can add more if needed)
 	CHNG_PEN_SIZE,
 	COPY,
 	PASTE,
+	CUT,
 	MOVE,			//Move a figure(s)
 	RESIZE,			//Resize a figure(s)
 	ROTATE,			//Rotate a figure(s)

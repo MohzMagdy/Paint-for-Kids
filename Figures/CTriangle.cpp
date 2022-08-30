@@ -69,20 +69,20 @@ CFigure* CTriangle::CopyInfo(CFigure* p)
 
 Point CTriangle::LocateStart()
 {
-	return Closer(Closer(Point1, Point2), Point3);
+	return Point1;
 }
 
 void CTriangle::SetPoints(Point p1, Point p2, Point p3)
 {
 	Point1 = p1;
-	Point3 = p2;
+	Point2 = p2;
 	Point3 = p3;
 
 }
 
 Point* CTriangle::GetPoints()
 {
-	Point points[] = { Point1, Point2, Point3};
+	Point points[] = {Point1, Point2, Point3};
 	return points;
 }
 

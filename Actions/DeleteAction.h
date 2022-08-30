@@ -1,3 +1,4 @@
+#pragma once
 #include "Action.h"
 #include "..\Figures\CFigure.h"
 #include "..\GUI\input.h"

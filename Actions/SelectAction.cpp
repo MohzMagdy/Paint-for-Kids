@@ -28,11 +28,12 @@ void SelectAction::ReadActionParameters()
 		}
 	}
 
-	for (int i = 0; i < pManager->FigList[i]->GetSelectCounter(); i++)
+	for (int i = 0, k = 0; i < pManager->get_FigCount() && k < pManager->FigList[i]->GetSelectCounter(); i++)
 	{
 		if (pManager->FigList[i]->IsSelected())
 		{
-			pManager->Selected[i] = pManager->FigList[i];
+			pManager->Selected[k] = pManager->FigList[i];
+			++k;
 		}
 	}
 		

@@ -10,11 +10,11 @@ void PasteAction::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
 
-	pOut->PrintMessage("Select the wanted figure");
+	pOut->PrintMessage("Click where you want to paste");
 
 	pIn->GetPointClicked(v1.x, v1.y);
 
-	Point Ref = pManager->Selected[0]->LocateStart();
+	Point Ref = pManager->Copied[0]->LocateStart();
 
 	for (int i = 0; i < pManager->GetCopyCounter(); i++)
 	{
@@ -26,6 +26,7 @@ void PasteAction::ReadActionParameters()
 		pManager->Copied[i]->CalDiff(v1, Ref, pManager->Copied[i]);
 		pManager->Copied[i]->Draw(pOut);
 		pManager->AddFigure(pManager->Copied[i]);
+
 	}
 	
 

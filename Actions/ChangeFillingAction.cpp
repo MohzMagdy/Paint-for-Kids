@@ -25,13 +25,13 @@ void ChangeFillingAction::ReadActionParameters()
 	switch (FillingType)
 	{
 	case SET_CLR_RED:
-		newFilling = RED;
+		newFilling = MyRed;
 		break;
 	case SET_CLR_GREEN:
-		newFilling = GREEN;
+		newFilling = MyGreen;
 		break;
 	case SET_CLR_BLUE:
-		newFilling = BLUE;
+		newFilling = MyBlue;
 		break;
 	case SET_CLR_NONE:
 		style = false;

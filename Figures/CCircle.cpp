@@ -53,13 +53,12 @@ string CCircle::PrintInfo()
 CFigure* CCircle::CopyInfo(CFigure* p)
 {
 	CCircle* c = new CCircle(*(p->GetPoints()), *(p->GetPoints() + 1), p->Get_Gfx());
-	return p;
+	return c;
 }
 
 Point CCircle::LocateStart()
 {
-	start.x = centerPoint.x - radius * cos(3.14 / 4);
-	start.x = centerPoint.y - radius * sin(3.14 / 4);
+	start = Closer(centerPoint, edgePoint);
 	return start;
 }
 
