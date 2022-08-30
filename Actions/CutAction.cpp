@@ -11,16 +11,17 @@ void CutAction::ReadActionParameters()
 	Output* pOut = pManager->GetOutput();
 	pOut->PrintMessage("Cut the wanted figure");
 
-	int s = (pManager->Selected[0]->GetSelectCounter());
+	int s = 0;
 
 	for (int i = 0; i < (pManager->get_FigCount()); i++)
 	{
 		if ((pManager->FigList[i])->IsSelected())
 		{
 			CFigure* p = pManager->Selected[s]->CopyInfo(pManager->Selected[s]);
-			s += 1;
 			pManager->NewCopy(p);
 			delete pManager->FigList[i];
+			pManager->Selected[s] = NULL;
+			s += 1;
 			pManager->FigList[i]->UpdateSelectCounter();
 			for (int j = 0, k = 1; j < (pManager->get_FigCount() - i) && k < (pManager->get_FigCount() - i + 1); j++, k++)
 			{

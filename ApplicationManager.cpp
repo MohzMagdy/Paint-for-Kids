@@ -94,8 +94,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			break;
 
 		case CUT:
-			pAct = new CopyAction(this);
-			pAct = new DeleteAction(this);
+			pAct = new CutAction(this);
 			break;
 
 		case EXIT:
