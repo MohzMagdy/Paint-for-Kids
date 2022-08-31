@@ -43,6 +43,7 @@ public:
 	static int GetSelectCounter();
 	static void UpdateSelectCounter();
 	static void ClearSelectCounter();
+	static void SetSelectCounter(int);
 
 	virtual string SaveInfo() = 0;
 	static string PointToString(Point);

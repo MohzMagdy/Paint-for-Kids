@@ -28,11 +28,13 @@ void SelectAction::ReadActionParameters()
 		}
 	}
 
-	for (int i = 0, k = 0; i < pManager->get_FigCount() && k < pManager->FigList[i]->GetSelectCounter(); i++)
+	//Create a list of the selected figures
+	for (int i = 0, k = 0; i < pManager->get_FigCount() /*&& k < pManager->FigList[i]->GetSelectCounter()*/ ; i++)
 	{
 		if (pManager->FigList[i]->IsSelected())
 		{
 			pManager->Selected[k] = pManager->FigList[i];
+			pManager->FigList[i]->SetSelectCounter(k + 1);
 			++k;
 		}
 	}

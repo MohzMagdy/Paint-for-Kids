@@ -75,6 +75,11 @@ void CFigure::ClearSelectCounter()
 	SelectCounter = 0;
 }
 
+void CFigure::SetSelectCounter(int s)
+{
+	SelectCounter = s;
+}
+
 string CFigure::PointToString(Point p)
 {
 	return "(" + to_string(p.x) + "," + to_string(p.y) + ")";

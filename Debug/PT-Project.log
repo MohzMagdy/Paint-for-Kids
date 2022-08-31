@@ -1,4 +1,10 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  Output.cpp
-D:\cpp\N_Project\Paint-for-Kids\GUI\Output.cpp(271,40): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  CRectangle.cpp
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(122,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(123,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  CLine.cpp
+  Generating Code...
+D:\cpp\N_Project\Paint-for-Kids\Figures\CLine.cpp(93): warning C4172: returning address of local variable or temporary: points
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(108): warning C4715: 'CRectangle::WithinMe': not all control paths return a value
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(164): warning C4172: returning address of local variable or temporary: points
   PT-Project.vcxproj -> D:\cpp\N_Project\Paint-for-Kids\Debug\PT Project.exe

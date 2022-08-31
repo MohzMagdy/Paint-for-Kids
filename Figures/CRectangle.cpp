@@ -149,9 +149,7 @@ CFigure* CRectangle::CopyInfo(CFigure* p)
 
 Point CRectangle::LocateStart()
 {
-	start.x = Corner1.x;
-	start.y = Corner1.y;
-	return start;
+	return Closer(Corner1, Corner2);
 }
 
 void CRectangle::SetPoints(Point p1, Point p2, Point p3)
