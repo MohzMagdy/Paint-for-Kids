@@ -105,6 +105,23 @@ string CRectangle::PrintInfo()
 	return "Rectangle: Width = " + to_string(w) + ", Length = " + to_string(l) + ", Area = " + to_string(float(GetArea())) + ", Perimeter = " + to_string(float(GetPerimeter()));
 }
 
+string CRectangle::SaveInfo()
+{
+	string name = "RECT";
+	//id
+	string C1 = PointToString(Corner1);
+	string C2 = PointToString(Corner2);
+	string draw = ColorToString(FigGfxInfo.DrawClr);
+	string border = to_string(FigGfxInfo.BorderWdth);
+	string fill;
+	if (FigGfxInfo.isFilled)
+		fill = ColorToString(FigGfxInfo.FillClr);
+	else
+		fill = "NONE";
+
+	return name + " " + C1 + " " + C2 + " " + draw + " " + fill + " " + border;
+}
+
 CFigure* CRectangle::CopyInfo(CFigure* p)
 {
 	CRectangle* c = new CRectangle;

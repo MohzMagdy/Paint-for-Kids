@@ -1,3 +1,34 @@
+<<<<<<< Updated upstream
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   CopyAction.cpp
   PT-Project.vcxproj -> D:\cpp\N_Project\Paint-for-Kids\Debug\PT Project.exe
+=======
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  main.cpp
+  CTriangle.cpp
+  CRectangle.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Figures\CRectangle.cpp(101,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Figures\CRectangle.cpp(102,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  CLine.cpp
+  CFigure.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Figures\CFigure.cpp(62,20): warning C4018: '<': signed/unsigned mismatch
+  CCircle.cpp
+  ApplicationManager.cpp
+  SelectAction.cpp
+  SaveAction.cpp
+  LoadAction.cpp
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Actions\LoadAction.cpp(182,20): warning C4018: '<': signed/unsigned mismatch
+  DeleteAction.cpp
+  ChangeFillingAction.cpp
+  ChangeColorAction.cpp
+  ChangeBorderAction.cpp
+  AddTriaAction.cpp
+  AddRectAction.cpp
+  AddLineAction.cpp
+  AddCircAction.cpp
+  Generating Code...
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Figures\CFigure.cpp(93): warning C4715: 'CFigure::ColorToString': not all control paths return a value
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Figures\CFigure.cpp(105): warning C4715: 'CFigure::StringToColor': not all control paths return a value
+F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Figures\CRectangle.cpp(87): warning C4715: 'CRectangle::WithinMe': not all control paths return a value
+  PT-Project.vcxproj -> F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Debug\PT Project.exe
+>>>>>>> Stashed changes

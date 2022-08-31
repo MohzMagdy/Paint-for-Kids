@@ -16,6 +16,8 @@ public:
 	virtual string PrintInfo();
 	virtual double GetArea();
 	virtual double GetPerimeter();
+
+	virtual string SaveInfo();
 	virtual CFigure* CopyInfo(CFigure*);
 };
 

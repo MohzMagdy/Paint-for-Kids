@@ -58,6 +58,18 @@ string CLine::PrintInfo()
 	return "Line: length = " + to_string(length) + ", starts from(" + to_string(Point1.x) + ", " + to_string(Point1.y) + "), to(" + to_string(Point2.x) + ", " + to_string(Point2.y) + ")" ;
 }
 
+string CLine::SaveInfo()
+{
+	string name = "LINE";
+	//id
+	string P1 = PointToString(Point1);
+	string P2 = PointToString(Point2);
+	string draw = ColorToString(FigGfxInfo.DrawClr);
+	string border = to_string(FigGfxInfo.BorderWdth);
+
+	return name + " " + P1 + " " + P2 + " " + draw + " " + border;
+}
+
 CFigure* CLine::CopyInfo(CFigure* p)
 {
 	CLine* c = new CLine;

@@ -61,6 +61,24 @@ string CTriangle::PrintInfo()
 	return "Triangle: area = " + to_string(GetArea()) + ", Perimeter = " + to_string(GetPerimeter());
 }
 
+string CTriangle::SaveInfo()
+{
+	string name = "TRIA";
+	//id
+	string P1 = PointToString(Point1);
+	string P2 = PointToString(Point2);
+	string P3 = PointToString(Point3);
+	string draw = ColorToString(FigGfxInfo.DrawClr);
+	string border = to_string(FigGfxInfo.BorderWdth);
+	string fill;
+	if (FigGfxInfo.isFilled)
+		fill = ColorToString(FigGfxInfo.FillClr);
+	else
+		fill = "NONE";
+
+	return name + " " + P1 + " " + P2 + " " + P3 + " " + draw + " " + fill + " " + border;
+}
+
 CFigure* CTriangle::CopyInfo(CFigure* p)
 {
 	CTriangle* c = new CTriangle;

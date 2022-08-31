@@ -19,6 +19,8 @@ public:
 	virtual string PrintInfo();
 	virtual CFigure* CopyInfo(CFigure*);
 
+	virtual string SaveInfo();
+
 };
 
 #endif

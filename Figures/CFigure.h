@@ -37,6 +37,14 @@ public:
 	virtual string PrintInfo() = 0;   
 	static int GetSelectCounter();
 	static void UpdateSelectCounter();
+	static void ClearSelectCounter();
+
+	virtual string SaveInfo() = 0;
+	static string PointToString(Point);
+	static Point StringToPoint(string);
+	static bool CompareColors(color, color);
+	static string ColorToString(color);
+	static color StringToColor(string);
 	virtual CFigure* CopyInfo(CFigure*) = 0;
 
 	///The following functions should be supported by the figure class

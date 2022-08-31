@@ -10,6 +10,8 @@
 #include "Actions\ChangeBorderAction.h"
 #include "Actions\ChangeFillingAction.h"
 #include "Actions\ChangeBorderAction.h"
+#include "Actions\SaveAction.h"
+#include "Actions\LoadAction.h"
 #include "Actions\CopyAction.h"
 
 //Constructor
@@ -93,6 +95,14 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case CHNG_PEN_SIZE:
 			pAct = new ChangeBorderAction(this);
+			break;
+
+		case SAVE:
+			pAct = new SaveAction(this);
+			break;
+
+		case LOAD:
+			pAct = new LoadAction(this);
 			break;
 
 		case COPY:

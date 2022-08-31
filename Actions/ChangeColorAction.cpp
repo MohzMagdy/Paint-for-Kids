@@ -47,7 +47,7 @@ void ChangeColorAction::ReadActionParameters()
 				if(colorPicked)
 					pManager->FigList[i]->ChngDrawClr(newDrawColor);
 				pManager->FigList[i]->SetSelected(false);
-				pManager->FigList[i]->UpdateSelectCounter();
+				pManager->FigList[i]->ClearSelectCounter();
 			}
 		}
 

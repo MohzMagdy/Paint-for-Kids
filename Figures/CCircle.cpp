@@ -56,3 +56,20 @@ CFigure* CCircle::CopyInfo(CFigure* p)
 	c->FigGfxInfo = FigGfxInfo;
 	return c;
 }
+
+string CCircle::SaveInfo()
+{
+	string name = "CIRC";
+	//id
+	string center = PointToString(centerPoint);
+	string edge = PointToString(edgePoint);
+	string draw = ColorToString(FigGfxInfo.DrawClr);
+	string border = to_string(FigGfxInfo.BorderWdth);
+	string fill;
+	if (FigGfxInfo.isFilled)
+		fill = ColorToString(FigGfxInfo.FillClr);
+	else
+		fill = "NONE";
+
+	return name + " " + center + " " + edge + " " + draw + " " + fill + " " + border;
+}

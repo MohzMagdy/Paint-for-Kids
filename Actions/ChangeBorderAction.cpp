@@ -45,7 +45,7 @@ void ChangeBorderAction::ReadActionParameters()
 			{
 				pManager->FigList[i]->ChngBorderWidth(newPenWidth);
 				pManager->FigList[i]->SetSelected(false);
-				pManager->FigList[i]->UpdateSelectCounter();
+				pManager->FigList[i]->ClearSelectCounter();
 			}
 		}
 
