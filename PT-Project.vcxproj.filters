@@ -331,6 +331,9 @@
     <ClInclude Include="Actions\LoadAction.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
+    <ClInclude Include="GUI\MyColors.h">
+      <Filter>GUI Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -83,7 +83,6 @@ Point* CCircle::GetPoints()
 	Point points[] = { centerPoint, edgePoint };
 	return points;
 }
-}
 
 string CCircle::SaveInfo()
 {
