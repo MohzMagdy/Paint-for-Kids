@@ -84,7 +84,7 @@ CFigure* CLine::CopyInfo(CFigure* p)
 
 Point CLine::LocateStart()
 {
-	return Closer(Point1, Point2);
+	return Point1;
 }
 
 Point* CLine::GetPoints()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   main.cpp
 F:\Study work\College\Current Semester\C++\Project\Paint for Kids\ActionStack.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
@@ -60,3 +61,15 @@ F:\Study work\College\Current Semester\C++\Project\Paint for Kids\ActionStack.h(
 F:\Study work\College\Current Semester\C++\Project\Paint for Kids\ActionStack.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Generating Code...
   PT-Project.vcxproj -> F:\Study work\College\Current Semester\C++\Project\Paint for Kids\Debug\PT Project.exe
+=======
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  CRectangle.cpp
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(122,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(123,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  CLine.cpp
+  Generating Code...
+D:\cpp\N_Project\Paint-for-Kids\Figures\CLine.cpp(93): warning C4172: returning address of local variable or temporary: points
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(108): warning C4715: 'CRectangle::WithinMe': not all control paths return a value
+D:\cpp\N_Project\Paint-for-Kids\Figures\CRectangle.cpp(164): warning C4172: returning address of local variable or temporary: points
+  PT-Project.vcxproj -> D:\cpp\N_Project\Paint-for-Kids\Debug\PT Project.exe
+>>>>>>> eaf4745e30a885d121ebc92368d4c031157b9242

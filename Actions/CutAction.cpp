@@ -6,6 +6,7 @@ CutAction::CutAction(ApplicationManager* pApp) : Action(pApp)
 
 void CutAction::ReadActionParameters()
 {
+	//ensure that the clipboard is empty
 	pManager->ClearCopyList();
 
 	Output* pOut = pManager->GetOutput();
@@ -17,7 +18,7 @@ void CutAction::ReadActionParameters()
 	{
 		if ((pManager->FigList[i])->IsSelected())
 		{
-			CFigure* p = pManager->Selected[s]->CopyInfo(pManager->Selected[s]);
+			CFigure* p = pManager->FigList[i]->CopyInfo(pManager->FigList[i]);
 			pManager->NewCopy(p);
 			delete pManager->FigList[i];
 			pManager->Selected[s] = NULL;
