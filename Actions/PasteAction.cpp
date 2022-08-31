@@ -24,8 +24,14 @@ void PasteAction::ReadActionParameters()
 	for (int i = 0; i < pManager->GetCopyCounter(); i++)
 	{
 		pManager->Copied[i]->CalDiff(v1, Ref, pManager->Copied[i]);
-		pManager->Copied[i]->Draw(pOut);
-		pManager->AddFigure(pManager->Copied[i]);
+		if (pManager->Copied[i]->Draw(pOut))
+		{
+			pManager->AddFigure(pManager->Copied[i]);
+		}
+		else
+		{
+			pOut->PrintMessage("You cannot paste object outside the draw area. Try to paste it properly.");
+		}
 
 	}
 	

@@ -12,9 +12,19 @@ CTriangle::CTriangle(Point P1, Point P2, Point P3, GfxInfo FigureGfxInfo) :CFigu
 }
 
 
-void CTriangle::Draw(Output* pOut) const
+bool CTriangle::Draw(Output* pOut) const
 {
-	pOut->DrawTria(Point1, Point2, Point3, FigGfxInfo, Selected);
+	
+	if (Point1.y > UI.ToolBarHeight && Point1.y < UI.height - UI.StatusBarHeight && Point2.y > UI.ToolBarHeight && Point2.y < UI.height - UI.StatusBarHeight && Point3.y > UI.ToolBarHeight && Point3.y < UI.height - UI.StatusBarHeight)
+	{
+		if (Point1.x > 0 && Point1.x < UI.width && Point2.x > 0 && Point2.x < UI.width && Point3.x > 0 && Point3.x < UI.width)
+		{
+			pOut->DrawTria(Point1, Point2, Point3, FigGfxInfo, Selected);
+			return true;
+		}
+
+	}
+	return false;
 }
 
 bool CTriangle::WithinMe(Point p, Output* pOut)

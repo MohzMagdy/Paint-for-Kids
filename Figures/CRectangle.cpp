@@ -11,11 +11,20 @@ CRectangle::CRectangle(Point P1, Point P2, GfxInfo FigureGfxInfo):CFigure(Figure
 	Corner2 = P2;
 }
 	
-
-void CRectangle::Draw(Output* pOut) const
+//0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight
+bool CRectangle::Draw(Output* pOut) const
 {
 	//Call Output::DrawRect to draw a rectangle on the screen	
-	pOut->DrawRect(Corner1, Corner2, FigGfxInfo, Selected);
+	if ((Corner1.y > UI.ToolBarHeight) && (Corner1.y < UI.height - UI.StatusBarHeight) && (Corner2.y > UI.ToolBarHeight) && (Corner2.y < UI.height - UI.StatusBarHeight))
+	{
+		if ((Corner1.x > 0) && (Corner1.x < UI.width) && (Corner2.x > 0) && (Corner2.x < UI.width))
+		{
+			pOut->DrawRect(Corner1, Corner2, FigGfxInfo, Selected);
+			return true;
+		}
+
+	}
+	return false;
 }
 
 bool CRectangle::WithinMe(Point v, Output* pOut)
