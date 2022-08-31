@@ -35,7 +35,18 @@ void AddTriaAction::ReadActionParameters()
 	TriaGfxInfo.FillClr = pOut->getCrntFillColor();
 	TriaGfxInfo.BorderWdth = pOut->getCrntPenWidth();
 
-	pOut->ClearStatusBar();
+	//Create a Triangle with the parameters read from the user
+	CTriangle* T = new CTriangle(P1, P2, P3, TriaGfxInfo);
+	if (T->Draw(pOut))
+	{
+		//Add the Triangle to the list of figures
+		pManager->AddFigure(T);
+	}
+	else
+	{
+		pOut->PrintMessage("You Cannot draw outside the drawing area. Please Select The shape again and choose proper points.");
+		delete T;
+	}
 
 }
 

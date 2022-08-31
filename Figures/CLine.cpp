@@ -13,9 +13,19 @@ CLine::CLine(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 }
 
 
-void CLine::Draw(Output* pOut) const
+bool CLine::Draw(Output* pOut) const
 {
-	pOut->DrawLine(Point1, Point2, FigGfxInfo, Selected);
+	
+	if (Point1.y > UI.ToolBarHeight && Point1.y < UI.height - UI.StatusBarHeight && Point2.y > UI.ToolBarHeight && Point2.y < UI.height - UI.StatusBarHeight)
+	{
+		if (Point1.x > 0 && Point1.x < UI.width && Point2.x > 0 && Point2.x < UI.width)
+		{
+			pOut->DrawLine(Point1, Point2, FigGfxInfo, Selected);
+			return true;
+		}
+
+	}
+	return false;
 }
 
 bool CLine::WithinMe(Point v, Output* pOut)

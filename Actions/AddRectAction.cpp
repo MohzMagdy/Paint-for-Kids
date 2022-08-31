@@ -31,7 +31,17 @@ void AddRectAction::ReadActionParameters()
 	RectGfxInfo.FillClr = pOut->getCrntFillColor();
 	RectGfxInfo.BorderWdth = pOut->getCrntPenWidth();
 
-	pOut->ClearStatusBar();
+	//Create a Circle with the parameters read from the user
+	CRectangle* R = new CRectangle(P1, P2, RectGfxInfo);
+	if (R->Draw(pOut))
+	{
+		pManager->AddFigure(R);
+	}
+	else
+	{
+		pOut->PrintMessage("You Cannot draw outside the drawing area. Please Select The shape again and choose proper points.");
+		delete R;
+	}
 
 }
 
@@ -41,11 +51,6 @@ void AddRectAction::Execute()
 	//This action needs to read some parameters first
 	ReadActionParameters();
 	
-	//Create a rectangle with the parameters read from the user
-	CRectangle *R=new CRectangle(P1, P2, RectGfxInfo);
-
-	//Add the rectangle to the list of figures
-	pManager->AddFigure(R);
 }
 
 void AddRectAction::Undo()

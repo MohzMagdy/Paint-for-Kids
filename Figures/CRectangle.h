@@ -12,7 +12,7 @@ private:
 public:
 	CRectangle();
 	CRectangle(Point , Point, GfxInfo FigureGfxInfo );
-	virtual void Draw(Output* pOut) const;
+	virtual bool Draw(Output* pOut) const;
 	virtual bool WithinMe(Point, Output* pOut);
 	virtual string PrintInfo();
 	virtual double GetArea();

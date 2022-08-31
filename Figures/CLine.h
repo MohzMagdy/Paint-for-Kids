@@ -14,7 +14,7 @@ public:
 	double length;
 	CLine();
 	CLine(Point, Point, GfxInfo FigureGfxInfo);
-	virtual void Draw(Output* pOut) const;
+	virtual bool Draw(Output* pOut) const;
 	virtual bool CLine::WithinMe(Point v, Output* pOut);
 	virtual double GetArea();
 	virtual double GetPerimeter();

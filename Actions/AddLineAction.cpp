@@ -31,7 +31,18 @@ void AddLineAction::ReadActionParameters()
 	LineGfxInfo.FillClr = pOut->getCrntFillColor();
 	LineGfxInfo.BorderWdth = pOut->getCrntPenWidth();
 
-	pOut->ClearStatusBar();
+	CLine* L = new CLine(P1, P2, LineGfxInfo);
+	if (L->Draw(pOut))
+	{
+		pManager->AddFigure(L);
+	}
+	else
+	{
+		pOut->PrintMessage("You Cannot draw outside the drawing area. Please Select The shape again and choose proper points.");
+		delete L;
+	}
+		
+	
 
 }
 
@@ -41,11 +52,6 @@ void AddLineAction::Execute()
 	//This action needs to read some parameters first
 	ReadActionParameters();
 
-	//Create a Triangle with the parameters read from the user
-	CLine* L = new CLine(P1, P2, LineGfxInfo);
-
-	//Add the Triangle to the list of figures
-	pManager->AddFigure(L);
 }
 
 void AddLineAction::Undo()

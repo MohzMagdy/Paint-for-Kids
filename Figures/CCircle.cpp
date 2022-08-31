@@ -9,13 +9,24 @@ CCircle::CCircle(Point center, Point edge, GfxInfo FigureGfxInfo) :CFigure(Figur
 {
 	centerPoint = center;
 	edgePoint = edge;
+	radius = Cal_Length(centerPoint, edgePoint);
 }
+//0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight
 
-
-void CCircle::Draw(Output* pOut) const
+bool CCircle::Draw(Output* pOut) const
 {
-	//Call Output::DrawCirc to draw a Circle on the screen	
-	pOut->DrawCirc(centerPoint, edgePoint, FigGfxInfo, Selected);
+	//Call Output::DrawCirc to draw a Circle on the screen
+	if (centerPoint.y > UI.ToolBarHeight && centerPoint.y < UI.height - UI.StatusBarHeight && centerPoint.x > 0 && centerPoint.x < UI.width)
+	{
+		for (int i = 0; i < 360; i++)
+		{
+			if (radius * cos((i * 3.14) / 180) + centerPoint.x < 0 || radius * cos((i * 3.14) / 180) + centerPoint.x > UI.width || -radius * sin((i * 3.14) / 180) + centerPoint.y < UI.ToolBarHeight || -radius * sin((i * 3.14) / 180) + centerPoint.y > UI.height - UI.StatusBarHeight)
+				return false;
+		}
+
+		pOut->DrawCirc(centerPoint, edgePoint, FigGfxInfo, Selected);
+		return true;
+	}
 }
 
 bool CCircle::WithinMe(Point v, Output* pOut)
@@ -32,7 +43,7 @@ bool CCircle::WithinMe(Point v, Output* pOut)
 		SetSelected(true);
 		SelectCounter++;
 		return true;
-	}                         // Here we should print the figure info as well *mendokusai -_-*
+	}                         
 	else
 	{
 		return false;

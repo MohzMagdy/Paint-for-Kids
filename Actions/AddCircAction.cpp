@@ -31,8 +31,18 @@ void AddCircAction::ReadActionParameters()
 	CircGfxInfo.FillClr = pOut->getCrntFillColor();
 	CircGfxInfo.BorderWdth = pOut->getCrntPenWidth();
 
-	pOut->ClearStatusBar();
-
+	//Create a Circle with the parameters read from the user
+	CCircle* C = new CCircle(center, edge, CircGfxInfo);
+	if (C->Draw(pOut))
+	{
+		pManager->AddFigure(C);
+	}
+	else
+	{
+		pOut->PrintMessage("You Cannot draw outside the drawing area. Please Select The shape again and choose proper points.");
+		delete C;
+	}
+	
 }
 
 //Execute the action
@@ -41,11 +51,7 @@ void AddCircAction::Execute()
 	//This action needs to read some parameters first
 	ReadActionParameters();
 
-	//Create a Circle with the parameters read from the user
-	CCircle* C = new CCircle(center, edge, CircGfxInfo);
-
-	//Add the Circle to the list of figures
-	pManager->AddFigure(C);
+	
 }
 
 void AddCircAction::Undo()

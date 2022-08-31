@@ -107,11 +107,11 @@ Point CFigure::StringToPoint(string str)
 
 string CFigure::ColorToString(color c)
 {
-	if (CompareColors(c, RED))
+	if (CompareColors(c, MyRed))
 		return "RED";
-	if (CompareColors(c, GREEN))
+	if (CompareColors(c, MyGreen))
 		return "GREEN";
-	if (CompareColors(c, BLUE))
+	if (CompareColors(c, MyBlue))
 		return "BLUE";
 	if (CompareColors(c, LIGHTGREY))
 		return "LIGHTGREY";
@@ -126,11 +126,11 @@ string CFigure::ColorToString(color c)
 color CFigure::StringToColor(string st)
 {
 	if (st == "RED")
-		return RED;
+		return MyRed;
 	if (st == "GREEN")
-		return GREEN;
+		return MyGreen;
 	if (st == "BLUE")
-		return BLUE;
+		return MyBlue;
 	if (st == "LIGHTGREY")
 		return LIGHTGREY;
 	if (st == "MyRed")
