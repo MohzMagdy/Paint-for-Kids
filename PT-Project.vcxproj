@@ -141,6 +141,8 @@
     <ClCompile Include="Actions\ExitAction.cpp" />
     <ClCompile Include="Actions\PasteAction.cpp" />
     <ClCompile Include="Actions\LoadAction.cpp" />
+    <ClCompile Include="Actions\Pickbycolor.cpp" />
+    <ClCompile Include="Actions\Pickbyfigure.cpp" />
     <ClCompile Include="Actions\RedoAction.cpp" />
     <ClCompile Include="Actions\SaveAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
@@ -205,6 +207,8 @@
     <ClInclude Include="Actions\ExitAction.h" />
     <ClInclude Include="Actions\PasteAction.h" />
     <ClInclude Include="Actions\LoadAction.h" />
+    <ClInclude Include="Actions\Pickbycolor.h" />
+    <ClInclude Include="Actions\Pickbyfigure.h" />
     <ClInclude Include="Actions\RedoAction.h" />
     <ClInclude Include="Actions\SaveAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />

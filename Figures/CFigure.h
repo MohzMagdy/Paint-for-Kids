@@ -15,6 +15,7 @@ protected:
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
 	static Point Extra;
+	bool PlayHidden;
 	
 	
 	/// Add more parameters if needed.
@@ -56,6 +57,11 @@ public:
 	virtual void CalDiff(Point, Point, CFigure*) = 0;
 	virtual Point* GetPoints() = 0;
 	virtual void SetPoints(Point, Point, Point) = 0;
+
+	void Hide();
+	void Show();
+	GfxInfo GetGfxInfo()const;
+
 
 
 	///The following functions should be supported by the figure class

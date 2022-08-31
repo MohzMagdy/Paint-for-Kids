@@ -16,6 +16,8 @@
 #include "Actions\ExitAction.h"
 #include "Actions\UndoAction.h"
 #include "Actions\RedoAction.h"
+#include "Actions/Pickbyfigure.h"
+#include "Actions/Pickbycolor.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -131,6 +133,14 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 				pAct = new RedoAction(this);
 			break;
 
+		case HIDE:
+			pAct = new Pickbyfigure(this);
+			break;
+
+		case PICK_COLOR:
+			pAct = new Pickbycolor(this);
+			break;
+
 		case EXIT:
 			pAct = new ExitAction(this);
 			break;
@@ -199,6 +209,32 @@ Output *ApplicationManager::GetOutput() const
 
 int ApplicationManager::get_FigCount() 
 { return FigCount; }
+
+int ApplicationManager::getFigCount() const
+{
+	return FigCount;
+}
+
+CFigure* ApplicationManager::DrawnFigs(int i) const
+{
+	return FigList[i];
+}
+////////////////////////////////////////////////////////////////////////////////////
+CFigure* ApplicationManager::GetFigure(Point x, Output* y) const
+{
+	//If a figure is found return a pointer to it.
+	//if this point (x,y) does not belong to any figure return NULL
+
+	for (int i = FigCount - 1; i >= 0; i--) {
+		if (FigList[i]->WithinMe(x, y))
+			return FigList[i];
+	}
+
+	///Add your code here to search for a figure given a point x,y
+
+	return NULL;
+}
+
 
 CFigure* ApplicationManager::P_FigList() 
 { return FigList[0];  }

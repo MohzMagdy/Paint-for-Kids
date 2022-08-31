@@ -151,3 +151,15 @@ bool CFigure::CompareColors(color c1, color c2)
 	return c1.ucBlue == c2.ucBlue && c1.ucGreen == c2.ucGreen && c1.ucRed == c2.ucRed;
 }
 
+GfxInfo CFigure::GetGfxInfo() const
+{
+	return FigGfxInfo;
+}
+void CFigure::Hide()
+{
+	PlayHidden = true;
+}
+void CFigure::Show()
+{
+	PlayHidden = false;
+}

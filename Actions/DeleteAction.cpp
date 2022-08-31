@@ -23,10 +23,10 @@ void DeleteAction::ReadActionParameters()
 			i = i - 1;
 			delete pManager->FigList[pManager->get_FigCount() - 1];
 			pManager->DelFigure();
-			pOut->ClearDrawArea();
-			pManager->UpdateInterface();
 		}
 	}
+	pOut->ClearDrawArea();
+	pManager->UpdateInterface();
 }
 
 void DeleteAction::Execute()

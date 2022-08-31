@@ -172,7 +172,10 @@ void Output::CreatePlayToolBar() const
 	//Play mode items
 	string MenuItemImages[PLAY_ITM_COUNT];
 	MenuItemImages[PLY_DRAW] = "images\\MenuItems\\Menu_Play.jpg";
+	MenuItemImages[PLY_HIDE] = "images\\MenuItems\\RTC.jpg";
+	MenuItemImages[PLY_COLOR] = "images\\MenuItems\\RTC_color.jpg";
 	MenuItemImages[PLY_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+
 
 	for (int i = 0; i < PLAY_ITM_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);

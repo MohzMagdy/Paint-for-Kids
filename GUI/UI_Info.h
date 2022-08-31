@@ -77,7 +77,10 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	
 	//TODO: Add more items names here
 	PLY_DRAW,
+	PLY_HIDE,
+	PLY_COLOR,
 	PLY_EXIT,
+
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	

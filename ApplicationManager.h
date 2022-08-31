@@ -73,6 +73,10 @@ public:
 	ActionStack<ActionType> redoStack;
 	ActionStack<Action*> redoStackParams;
 	void StackAction(ActionType, Action*);
+
+	int getFigCount() const;
+	CFigure* DrawnFigs(int i) const;
+	CFigure* GetFigure(Point x, Output* y) const;
 };
 
 #endif

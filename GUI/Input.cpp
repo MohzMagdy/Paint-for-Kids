@@ -92,7 +92,10 @@ ActionType Input::GetUserAction() const
 			switch (ClickedItemOrder)
 			{
 			case PLY_DRAW: return TO_DRAW;
+			case PLY_HIDE: return HIDE;
+			case PLY_COLOR: return PICK_COLOR;
 			case PLY_EXIT: return EXIT;
+
 
 			default: return EMPTY;
 			}

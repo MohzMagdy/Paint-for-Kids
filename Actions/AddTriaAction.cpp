@@ -55,12 +55,6 @@ void AddTriaAction::Execute()
 {
 	//This action needs to read some parameters first
 	ReadActionParameters();
-
-	//Create a Triangle with the parameters read from the user
-	CTriangle* T = new CTriangle(P1, P2, P3, TriaGfxInfo);
-
-	//Add the Triangle to the list of figures
-	pManager->AddFigure(T);
 }
 
 void AddTriaAction::Undo()
