@@ -39,3 +39,9 @@ void CutAction::ReadActionParameters()
 void CutAction::Execute() {
 	ReadActionParameters();
 }
+
+void CutAction::Undo()
+{}
+
+void CutAction::Redo()
+{}

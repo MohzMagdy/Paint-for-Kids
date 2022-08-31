@@ -66,6 +66,8 @@ ActionType Input::GetUserAction() const
 			case ITM_COPY: return COPY;
 			case ITM_PASTE: return PASTE;
 			case ITM_CUT: return CUT;
+			case ITM_UNDO: return UNDO;
+			case ITM_REDO: return REDO;
 			case ITM_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar

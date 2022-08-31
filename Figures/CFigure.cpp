@@ -115,6 +115,12 @@ string CFigure::ColorToString(color c)
 		return "BLUE";
 	if (CompareColors(c, LIGHTGREY))
 		return "LIGHTGREY";
+	if (CompareColors(c, MyRed))
+		return "MyRed";
+	if (CompareColors(c, MyGreen))
+		return "MyGreen";
+	if (CompareColors(c, MyBlue))
+		return "MyBlue";
 }
 
 color CFigure::StringToColor(string st)
@@ -127,6 +133,12 @@ color CFigure::StringToColor(string st)
 		return BLUE;
 	if (st == "LIGHTGREY")
 		return LIGHTGREY;
+	if (st == "MyRed")
+		return MyRed;
+	if (st == "MyGreen")
+		return MyGreen;
+	if (st == "MyBlue")
+		return MyBlue;
 }
 
 bool CFigure::CompareColors(color c1, color c2)

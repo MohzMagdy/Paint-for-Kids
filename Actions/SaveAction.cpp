@@ -41,3 +41,9 @@ void SaveAction::Execute()
 	ReadActionParameters();
 }
 
+void SaveAction::Undo()
+{}
+
+void SaveAction::Redo()
+{}
+

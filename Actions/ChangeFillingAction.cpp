@@ -68,3 +68,9 @@ void ChangeFillingAction::Execute()
 {
 	ReadActionParameters();
 }
+
+void ChangeFillingAction::Undo()
+{}
+
+void ChangeFillingAction::Redo()
+{}

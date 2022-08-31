@@ -13,6 +13,9 @@
 #include "Actions\SaveAction.h"
 #include "Actions\LoadAction.h"
 #include "Actions\CopyAction.h"
+#include "Actions\ExitAction.h"
+#include "Actions\UndoAction.h"
+#include "Actions\RedoAction.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -118,9 +121,18 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new CutAction(this);
 			break;
 
-		case EXIT:
-			///create ExitAction here
+		case UNDO:
+			if(!undoStack.isEmpty())
+				pAct = new UndoAction(this);
+			break;
 
+		case REDO:
+			if (!redoStack.isEmpty())
+				pAct = new RedoAction(this);
+			break;
+
+		case EXIT:
+			pAct = new ExitAction(this);
 			break;
 
 		case STATUS:	//a click on the status bar ==> no action
@@ -130,8 +142,8 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	//Execute the created action
 	if(pAct != NULL)
 	{
+		StackAction(ActType, pAct);
 		pAct->Execute();//Execute
-		delete pAct;	//Action is not needed any more ==> delete it
 		pAct = NULL;
 	}
 }
@@ -209,6 +221,31 @@ void ApplicationManager::ClearCopyList()
 		Copied[i] = NULL;
 
 	CopyCounter = 0;
+}
+
+//Adds actions to the undo/redo stack
+void ApplicationManager::StackAction(ActionType act, Action* pAct)
+{
+	//Checks if the action is one of the ignored
+	ActionType ignoredActions[8] = {EXIT, STATUS, SAVE, LOAD, TO_PLAY, TO_DRAW, UNDO, REDO};
+	bool notIgnored = true;
+	for (int i = 0; i < 8; i++)
+	{
+		if (act == ignoredActions[i])
+		{
+			notIgnored = false;
+		}
+	}
+
+	//Pushes the action type and action object to undo stacks and clears redo stacks
+	if (notIgnored)
+	{
+		undoStack.push(act);
+		undoStackParams.push(pAct);
+		redoStack.clear();
+		while(!redoStackParams.isEmpty())
+			delete redoStackParams.pop();
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////

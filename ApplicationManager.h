@@ -6,6 +6,7 @@
 #include "GUI\input.h"
 #include "GUI\output.h"
 #include "GUI\MyColors.h"
+#include "ActionStack.h"
 #include "Actions\AddRectAction.h"
 #include "Actions\AddCircAction.h"
 #include "Actions\AddTriaAction.h"
@@ -65,6 +66,13 @@ public:
 	int GetCopyCounter();
 	void NewCopy(CFigure* fig);
 	void ClearCopyList();
+
+	// -- Undo/Redo Stacks
+	ActionStack<ActionType> undoStack;
+	ActionStack<Action*> undoStackParams;
+	ActionStack<ActionType> redoStack;
+	ActionStack<Action*> redoStackParams;
+	void StackAction(ActionType, Action*);
 };
 
 #endif

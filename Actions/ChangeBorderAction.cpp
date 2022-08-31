@@ -39,6 +39,7 @@ void ChangeBorderAction::ReadActionParameters()
 
 	if (pManager->FigList[0]->GetSelectCounter() != 0) //Items are selected
 	{
+
 		for (int i = 0; i < (pManager->get_FigCount()); i++)
 		{
 			if ((pManager->FigList[i])->IsSelected())
@@ -66,3 +67,9 @@ void ChangeBorderAction::Execute()
 {
 	ReadActionParameters();
 }
+
+void ChangeBorderAction::Undo()
+{}
+
+void ChangeBorderAction::Redo()
+{}

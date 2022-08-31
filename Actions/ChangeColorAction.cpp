@@ -69,3 +69,9 @@ void ChangeColorAction::Execute()
 {
 	ReadActionParameters();
 }
+
+void ChangeColorAction::Undo()
+{}
+
+void ChangeColorAction::Redo()
+{}

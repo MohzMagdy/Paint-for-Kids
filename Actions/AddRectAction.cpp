@@ -47,3 +47,20 @@ void AddRectAction::Execute()
 	//Add the rectangle to the list of figures
 	pManager->AddFigure(R);
 }
+
+void AddRectAction::Undo()
+{
+	Output* pOut = pManager->GetOutput();
+
+	int last_i = pManager->get_FigCount() - 1;
+	delete pManager->FigList[last_i];
+	pManager->DelFigure();
+	pOut->ClearDrawArea();
+}
+
+void AddRectAction::Redo()
+{
+	CRectangle* R = new CRectangle(P1, P2, RectGfxInfo);
+
+	pManager->AddFigure(R);
+}

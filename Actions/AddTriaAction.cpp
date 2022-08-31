@@ -51,3 +51,20 @@ void AddTriaAction::Execute()
 	//Add the Triangle to the list of figures
 	pManager->AddFigure(T);
 }
+
+void AddTriaAction::Undo()
+{
+	Output* pOut = pManager->GetOutput();
+
+	int last_i = pManager->get_FigCount() - 1;
+	delete pManager->FigList[last_i];
+	pManager->DelFigure();
+	pOut->ClearDrawArea();
+}
+
+void AddTriaAction::Redo()
+{
+	CTriangle* T = new CTriangle(P1, P2, P3, TriaGfxInfo);
+
+	pManager->AddFigure(T);
+}

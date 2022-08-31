@@ -7,8 +7,10 @@
 
 class DeleteAction : public Action
 {
-protected:
-	Point v1;
+private:
+	int SelectCounter = CFigure::SelectCounter;
+	CFigure** delFigList = new CFigure * [SelectCounter];
+	int delFigListCounter = 0;
 
 public:
 
@@ -17,4 +19,10 @@ public:
 	virtual void ReadActionParameters();
 
 	virtual void Execute();
+
+	virtual void Undo();
+
+	virtual void Redo();
+
+	~DeleteAction();
 };

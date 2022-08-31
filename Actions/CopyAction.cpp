@@ -28,3 +28,9 @@ void CopyAction::ReadActionParameters()
 void CopyAction::Execute() {
 	ReadActionParameters();
 }
+
+void CopyAction::Undo()
+{}
+
+void CopyAction::Redo()
+{}

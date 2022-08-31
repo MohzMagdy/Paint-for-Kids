@@ -52,12 +52,12 @@ void LoadAction::ReadActionParameters()
 
 	//Loading Data
 	//Draw, fill, and background colors
-	//LoadFile >> loadedText;
-	//UI.DrawColor = CFigure::StringToColor(loadedText);
-	//LoadFile >> loadedText;
-	//UI.FillColor = CFigure::StringToColor(loadedText);
-	//LoadFile >> loadedText;
-	//UI.BkGrndColor = CFigure::StringToColor(loadedText);
+	LoadFile >> loadedText;
+	UI.DrawColor = CFigure::StringToColor(loadedText);
+	LoadFile >> loadedText;
+	UI.FillColor = CFigure::StringToColor(loadedText);
+	LoadFile >> loadedText;
+	UI.BkGrndColor = CFigure::StringToColor(loadedText);
 
 	getline(LoadFile, loadedText);
 	getline(LoadFile, loadedText);
@@ -196,3 +196,8 @@ string* LoadAction::ToSegments(string st, int dataSize)
 	return data;
 }
 
+void LoadAction::Undo()
+{}
+
+void LoadAction::Redo()
+{}

@@ -38,3 +38,9 @@ void PasteAction::Execute()
 	ReadActionParameters();
 
 }
+
+void PasteAction::Undo()
+{}
+
+void PasteAction::Redo()
+{}

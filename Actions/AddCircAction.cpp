@@ -47,3 +47,20 @@ void AddCircAction::Execute()
 	//Add the Circle to the list of figures
 	pManager->AddFigure(C);
 }
+
+void AddCircAction::Undo()
+{
+	Output* pOut = pManager->GetOutput();
+
+	int last_i = pManager->get_FigCount() - 1;
+	delete pManager->FigList[last_i];
+	pManager->DelFigure();
+	pOut->ClearDrawArea();
+}
+
+void AddCircAction::Redo()
+{
+	CCircle* C = new CCircle(center, edge, CircGfxInfo);
+
+	pManager->AddFigure(C);
+}

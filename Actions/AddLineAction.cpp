@@ -47,3 +47,20 @@ void AddLineAction::Execute()
 	//Add the Triangle to the list of figures
 	pManager->AddFigure(L);
 }
+
+void AddLineAction::Undo()
+{
+	Output* pOut = pManager->GetOutput();
+
+	int last_i = pManager->get_FigCount() - 1;
+	delete pManager->FigList[last_i];
+	pManager->DelFigure();
+	pOut->ClearDrawArea();
+}
+
+void AddLineAction::Redo()
+{
+	CLine* L = new CLine(P1, P2, LineGfxInfo);
+
+	pManager->AddFigure(L);
+}

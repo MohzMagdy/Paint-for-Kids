@@ -13,7 +13,8 @@ void DeleteAction::ReadActionParameters()
 	{
 		if ((pManager->FigList[i])->IsSelected())
 		{	
-			delete pManager->FigList[i];
+			delFigList[delFigListCounter] = pManager->FigList[i];
+			delFigListCounter++;
 			pManager->FigList[i]->UpdateSelectCounter();
 			for (int j = 0, k = 1; j < (pManager->get_FigCount() - i) && k < (pManager->get_FigCount() - i + 1); j++, k++)
 			{
@@ -31,4 +32,30 @@ void DeleteAction::ReadActionParameters()
 void DeleteAction::Execute()
 {
 	ReadActionParameters();
+}
+
+void DeleteAction::Undo()
+{
+	int figCount = pManager->get_FigCount();
+
+	for (int i = 0 ; i < SelectCounter; i++)
+	{
+		pManager->AddFigure(delFigList[i]);
+	}
+
+	CFigure::SelectCounter += delFigListCounter;
+	delFigListCounter = 0;
+	Output* pOut = pManager->GetOutput();
+	pOut->ClearDrawArea();
+	pManager->UpdateInterface();
+}
+
+void DeleteAction::Redo()
+{
+	Execute();
+}
+
+DeleteAction::~DeleteAction()
+{
+	delete[] delFigList;
 }

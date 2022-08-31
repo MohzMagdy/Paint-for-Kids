@@ -196,6 +196,15 @@
     <ClCompile Include="Actions\CutAction.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\ExitAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\RedoAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\UndoAction.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -333,6 +342,18 @@
     </ClInclude>
     <ClInclude Include="GUI\MyColors.h">
       <Filter>GUI Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ExitAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\RedoAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\UndoAction.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionStack.h">
+      <Filter>Application Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

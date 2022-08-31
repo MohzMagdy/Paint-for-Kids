@@ -19,6 +19,7 @@ void SelectAction::ReadActionParameters()
 	{
 		if ((pManager->FigList[i])->WithinMe(v1, pOut))
 		{
+			selected = pManager->FigList[i];
 			pManager->FigList[i]->Draw(pOut);
 			if (pManager->FigList[i]->GetSelectCounter() > 1)
 				pOut->PrintMessage("Number of Selected Figures is " + to_string(pManager->FigList[i]->GetSelectCounter()));
@@ -43,5 +44,29 @@ void SelectAction::Execute()
 {
 	ReadActionParameters();
 
+}
+
+void SelectAction::Undo()
+{
+	if (selected != nullptr)
+	{
+		selected->SetSelected(false);
+		CFigure::SelectCounter--;
+
+		Output* pOut = pManager->GetOutput();
+		pOut->ClearDrawArea();
+	}
+}
+
+void SelectAction::Redo()
+{
+	if (selected != nullptr)
+	{
+		selected->SetSelected(true);
+		CFigure::SelectCounter++;
+
+		Output* pOut = pManager->GetOutput();
+		pOut->ClearDrawArea();
+	}
 }
 

@@ -7,6 +7,9 @@
 
 class SelectAction : public Action
 {
+private:
+	CFigure* selected;
+
 protected:
 	Point v1;
 
@@ -17,5 +20,9 @@ public:
 	virtual void ReadActionParameters();
 
 	virtual void Execute();
+
+	virtual void Undo();
+
+	virtual void Redo();
 };
 
