@@ -6,6 +6,7 @@
 #include <cmath>
 #include <string>
 
+
 //Base class for all figures
 class CFigure
 {
@@ -13,6 +14,7 @@ protected:
 	int ID;		//Each figure has an ID
 	bool Selected;	//true if the figure is selected.
 	GfxInfo FigGfxInfo;	//Figure graphis info
+	static Point Extra;
 	
 	
 	/// Add more parameters if needed.
@@ -30,8 +32,11 @@ public:
 	void ChngFillClr(color Fclr, bool style);	//changes the figure's filling color
 	void CFigure::ChngBorderWidth(int width);
 
+	GfxInfo Get_Gfx();
+
 	virtual bool WithinMe(Point c1, Output* pOut) = 0;
 	double Cal_Length(Point p1, Point P2);
+	Point Closer(Point, Point);
 	virtual double GetArea() = 0;
 	virtual double GetPerimeter() = 0;
 	virtual string PrintInfo() = 0;   
@@ -46,6 +51,11 @@ public:
 	static string ColorToString(color);
 	static color StringToColor(string);
 	virtual CFigure* CopyInfo(CFigure*) = 0;
+	virtual Point LocateStart() = 0;
+	virtual void CalDiff(Point, Point, CFigure*) = 0;
+	virtual Point* GetPoints() = 0;
+	virtual void SetPoints(Point, Point, Point) = 0;
+
 
 	///The following functions should be supported by the figure class
 	///It should be overridden by each inherited figure

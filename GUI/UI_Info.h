@@ -25,14 +25,18 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_TRIA,      //Triangle item in menu
 	ITM_LINE,
 	ITM_SELECT,
+	ITM_CLR,		//Color item
+	ITM_FILL,
+	ITM_BORDER,
 	ITM_DELETE,
 	ITM_COPY,
+	ITM_CUT,
+	ITM_PASTE,
+	
 	// ITM_Change_FClr,
 	//TODO: Add more items names here
 
-	ITM_CLR,		//Color item
-	ITM_FILL, 
-	ITM_BORDER,
+	
 
 	ITM_SAVE,
 	ITM_LOAD,

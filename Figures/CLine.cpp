@@ -1,7 +1,9 @@
 #include "CLine.h"
 
 CLine::CLine()
-{}
+{
+	
+}
 
 CLine::CLine(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)
 {
@@ -35,12 +37,6 @@ bool CLine::WithinMe(Point v, Output* pOut)
 	{
 		return false;
 	}
-		
-	/*if ((Point1.x > Point2.x) && (Point1.y > Point2.y))
-	{
-		if (Cal_Length(Point1, v) + Cal_Length(Point1, v))
-		(Cal_Length(Point1, v) + Cal_Length(Point2, v)  length + 3) || (Cal_Length(Point1, v) + Cal_Length(Point2, v) == length - 3)
-	}*/
 }
 
 double CLine::GetArea()
@@ -72,7 +68,33 @@ string CLine::SaveInfo()
 
 CFigure* CLine::CopyInfo(CFigure* p)
 {
-	CLine* c = new CLine;
-	c->FigGfxInfo = FigGfxInfo;
+	CLine* c = new CLine(*(p->GetPoints()), *(p->GetPoints() + 1), p->Get_Gfx());
 	return c;
+}
+
+Point CLine::LocateStart()
+{
+	return Closer(Point1, Point2);
+}
+
+Point* CLine::GetPoints()
+{
+	Point points[] = { Point1, Point2 };
+	return points;
+}
+
+void CLine::SetPoints(Point p1, Point p2, Point p3)
+{
+	Point1 = p1;
+	Point2 = p2;
+}
+
+void CLine::CalDiff(Point v1, Point ref, CFigure* pfig)
+{
+	Point p1, p2;
+	p1.x = v1.x + (*(pfig->GetPoints())).x - ref.x;
+	p1.y = v1.y + (*(pfig->GetPoints())).y - ref.y;
+	p2.x = v1.x + (*(pfig->GetPoints() + 1)).x - ref.x;
+	p2.y = v1.y + (*(pfig->GetPoints() + 1)).y - ref.y;
+	pfig->SetPoints(p1, p2, { 0, 0 });
 }

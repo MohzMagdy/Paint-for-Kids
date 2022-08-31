@@ -136,7 +136,9 @@
     <ClCompile Include="Actions\ChangeColorAction.cpp" />
     <ClCompile Include="Actions\ChangeFillingAction.cpp" />
     <ClCompile Include="Actions\CopyAction.cpp" />
+    <ClCompile Include="Actions\CutAction.cpp" />
     <ClCompile Include="Actions\DeleteAction.cpp" />
+    <ClCompile Include="Actions\PasteAction.cpp" />
     <ClCompile Include="Actions\LoadAction.cpp" />
     <ClCompile Include="Actions\SaveAction.cpp" />
     <ClCompile Include="Actions\SelectAction.cpp" />
@@ -194,7 +196,9 @@
     <ClInclude Include="Actions\ChangeColorAction.h" />
     <ClInclude Include="Actions\ChangeFillingAction.h" />
     <ClInclude Include="Actions\CopyAction.h" />
+    <ClInclude Include="Actions\CutAction.h" />
     <ClInclude Include="Actions\DeleteAction.h" />
+    <ClInclude Include="Actions\PasteAction.h" />
     <ClInclude Include="Actions\LoadAction.h" />
     <ClInclude Include="Actions\SaveAction.h" />
     <ClInclude Include="Actions\SelectAction.h" />

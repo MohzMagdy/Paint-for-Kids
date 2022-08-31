@@ -46,7 +46,28 @@ int CFigure::GetSelectCounter()
 
 void CFigure::UpdateSelectCounter()
 {
-	SelectCounter--;
+	SelectCounter -= 1;
+}
+
+Point CFigure::Closer(Point p1, Point p2)
+{
+	Point start;
+	if (p1.x < p2.x)
+		start.x = p1.x;
+	else
+		start.x = p2.x;
+
+	if (p1.y < p2.y)
+		start.y = p1.y;
+	else
+		start.y = p2.y;
+
+	return start;
+}
+
+GfxInfo CFigure::Get_Gfx()
+{
+	return FigGfxInfo;
 }
 
 void CFigure::ClearSelectCounter()
@@ -112,5 +133,4 @@ bool CFigure::CompareColors(color c1, color c2)
 {
 	return c1.ucBlue == c2.ucBlue && c1.ucGreen == c2.ucGreen && c1.ucRed == c2.ucRed;
 }
-
 

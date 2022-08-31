@@ -5,6 +5,21 @@
 #include "Figures\CFigure.h"
 #include "GUI\input.h"
 #include "GUI\output.h"
+#include "Actions\AddRectAction.h"
+#include "Actions\AddCircAction.h"
+#include "Actions\AddTriaAction.h"
+#include "Actions\AddLineAction.h"
+#include "Actions\ChangeColorAction.h"
+#include "Actions\SelectAction.h"
+#include "Actions\DeleteAction.h"
+#include "Actions\ChangeFillingAction.h"
+#include "Actions\ChangeBorderAction.h"
+#include "Actions\ChangeFillingAction.h"
+#include "Actions\ChangeBorderAction.h"
+#include "Actions\CopyAction.h"
+#include "Actions\PasteAction.h"
+#include "Actions\CutAction.h"
+
 
 //Main class that manages everything in the application.
 class ApplicationManager
@@ -43,8 +58,12 @@ public:
 	CFigure* P_FigList();
 	CFigure* FigList[MaxFigCount];	 //List of all figures (Array of pointers)
 
+	CFigure* Selected[MaxFigCount];
+
 	CFigure* Copied[200];
+	int GetCopyCounter();
 	void NewCopy(CFigure* fig);
+	void ClearCopyList();
 };
 
 #endif

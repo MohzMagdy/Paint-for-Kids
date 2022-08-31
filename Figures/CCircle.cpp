@@ -52,9 +52,37 @@ string CCircle::PrintInfo()
 
 CFigure* CCircle::CopyInfo(CFigure* p)
 {
-	CCircle* c = new CCircle;
-	c->FigGfxInfo = FigGfxInfo;
+	CCircle* c = new CCircle(*(p->GetPoints()), *(p->GetPoints() + 1), p->Get_Gfx());
 	return c;
+}
+
+Point CCircle::LocateStart()
+{
+	start = Closer(centerPoint, edgePoint);
+	return start;
+}
+
+void CCircle::CalDiff(Point v1, Point ref, CFigure* pfig)
+{
+	Point p1, p2;
+	p1.x = v1.x + (*(pfig->GetPoints())).x - ref.x;
+	p1.y = v1.y + (*(pfig->GetPoints())).y - ref.y;
+	p2.x = v1.x + (*(pfig->GetPoints() + 1)).x - ref.x;
+	p2.y = v1.y + (*(pfig->GetPoints() + 1)).y - ref.y;
+	pfig->SetPoints(p1, p2, { 0, 0 });
+}
+
+void CCircle::SetPoints(Point p1, Point p2, Point p3)
+{
+	centerPoint = p1;
+	edgePoint = p2;
+}
+
+Point* CCircle::GetPoints()
+{
+	Point points[] = { centerPoint, edgePoint };
+	return points;
+}
 }
 
 string CCircle::SaveInfo()

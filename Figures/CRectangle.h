@@ -8,6 +8,7 @@ class CRectangle : public CFigure
 private:
 	Point Corner1;	
 	Point Corner2;
+	Point start;
 public:
 	CRectangle();
 	CRectangle(Point , Point, GfxInfo FigureGfxInfo );
@@ -19,6 +20,10 @@ public:
 
 	virtual string SaveInfo();
 	virtual CFigure* CopyInfo(CFigure*);
+	virtual Point LocateStart();
+	virtual void CalDiff(Point, Point, CFigure*);
+	virtual void SetPoints(Point, Point, Point);
+	virtual Point* GetPoints();
 };
 
 

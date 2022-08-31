@@ -9,6 +9,7 @@ private:
 	Point centerPoint;
 	Point edgePoint;
 	double radius;
+	Point start;
 public:
 	CCircle();
 	CCircle(Point, Point, GfxInfo FigureGfxInfo);
@@ -18,6 +19,11 @@ public:
 	virtual double GetPerimeter();
 	virtual string PrintInfo();
 	virtual CFigure* CopyInfo(CFigure*);
+	virtual Point LocateStart();
+	virtual void CalDiff(Point, Point, CFigure*);
+	virtual void SetPoints(Point, Point, Point);
+	virtual Point* GetPoints();
+
 
 	virtual string SaveInfo();
 
